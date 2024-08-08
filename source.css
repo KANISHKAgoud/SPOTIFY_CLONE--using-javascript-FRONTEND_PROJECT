@@ -15,3 +15,37 @@
     font-weight: 800;
     font-style: normal;
   }
+
+  .scrollable {
+    /* Hide scrollbar initially */
+    overflow-y: hidden;
+  }
+  
+  .scrollable:hover {
+    /* Show scrollbar on hover */
+    overflow-y: auto;
+  }
+  
+  /* Custom scrollbar styles */
+  .scrollable::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  .scrollable::-webkit-scrollbar-thumb {
+    background-color: #444; /* Dark color for scrollbar */
+    border-radius: 0px; /* Rounded corners for scrollbar */
+  }
+  
+  .scrollable::-webkit-scrollbar-thumb:hover {
+    background-color: #222; /* Darker color on hover */
+  }
+  
+  .scrollable::-webkit-scrollbar-track {
+    background-color: transparent; /* Transparent track */
+  }
+  
+  .scrollable::-webkit-scrollbar-corner,
+  .scrollable::-webkit-scrollbar-button {
+    display: none; /* Hide scrollbar buttons */
+  }
+  
