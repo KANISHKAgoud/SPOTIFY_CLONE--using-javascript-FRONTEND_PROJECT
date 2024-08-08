@@ -1,27 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>spotify-clone open.spotify.com</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <div class="page flex">
-        <div class="left-panel w-1/4 border-2 border-black bg-black h-full text-white flex flex-col justify-center items-center">
-            <div class="left-box-one bg-[#121212] w-4/5">
-                <img src="logo.svg" alt="">
-                <div class="">Home</div>
-                <div class="">Search</div>
-            </div>
-            <div class="left-box-two bg-[#121212] w-4/5">
-                <div class="">Your Library</div>
 
+<body>
+    <div class="page flex font-Spotify-bold bg-black h-screen">
+        <div class="left-panel w-1/4 text-white h-screen flex flex-col justify-center items-center">
+            <div class="left-box-one bg-[#121212] w-11/12 flex flex-col my-[2%]  rounded-xl">
+                <img class="ml-[7%] my-[5%] invert" src="logo.svg" alt="">
+                <div class="text-2xl ml-[7%] my-[2%]">
+                    <i class="fa-solid fa-house mr-[5%]"></i>
+                    <span class="text-lg"> Home</span>
+                </div>
+                <div class="text-2xl ml-[7%] mt-[3%] mb-[8%]">
+                    <i class="fa-solid fa-magnifying-glass mr-[5%]"></i>
+                    <span class="text-lg text-[#b3b3b3]"> Search</span>
+                </div>
+            </div>
+            <div class="left-box-two bg-[#121212] w-11/12 rounded-xl">
+                    <div class="text-2xl flex ml-[7%] mt-[6%] gap-x-[3%] text-[#b3b3b3]">
+                        <img class="invert" src="library.svg" alt="library">
+                        <span class="text-lg "> Your Library</span>
+                        <i class="fa-solid fa-plus ml-[19%]"></i>
+                    </div>
+
+                <div class="mt-8">
+                    <div class="px-[3%] h-24  flex flex-col">
+                        <div class="flex-1 overflow-y-auto">
+                            <div class="bg-[#1f1f1f] px-[4%] rounded-xl">
+                                <div class="text-lg  pt-[5%]">Create your first playlist</div>
+                                <div class="text-bases mt-[5%]">It's easy,we'll help you</div>
+                                <button class="bg-white text-black mt-[5%] mb-[5%] w-[50%] h-8 rounded-3xl">Create playlist</button>
+                            </div>
+                            <div class="bg-[#1f1f1f] pl-[4%] rounded-xl mt-8">
+                                <div class="text-base  pt-[5%]">Let's find some podcast to follow</div>
+                                <div class="text-sm mt-[5%]">We'll keep you updated on new episodes</div>
+                                <button class="bg-white text-black mt-[5%] mb-[5%] w-[50%] h-8 rounded-3xl">Browse podcast</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-xs text-[#b3b3b3] mt-10 ml-[4%]">
+                    <div class="flex gap-x-[6%] flex-wrap">
+                        <span class="mb-3">Legal</span>
+                        <span class="mb-3">Safety &amp; Privacy Center</span>
+                        <span class="mb-3">Privacy Policy</span>
+                        <span class="mb-3">Cookies</span>
+                        <span class="mb-3">About Ads</span>
+                        <span class="mb-3">Accessibility</span>
+                    </div>
+                    <span>Cookies</span>
+                </div>
+
+                <div class="my-9 border-2 border-white w-[33%] h-8 rounded-2xl flex justify-center items-center gap-x-1">
+                    <i class="fa-solid fa-globe"></i>English
+                </div>
             </div>
         </div>
-        <div class="right-panel w-3/4 h-full border-black bg-black border-2" >
-
+        <div class="right-panel w-3/4 h-full bg-black p-[0.5%]">
+            <header class="text-white bg-[#121212] px-[3%] py-[1%] rounded-xl flex justify-between items-center">
+                <div class="flex gap-x-8">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="flex items-center gap-x-8">
+                    <div class="">Sign up</div>
+                    <button class="bg-white text-black w-28 h-12 rounded-3xl">Log in</button>
+                </div>
+            </header>
         </div>
     </div>
 </body>
+
 </html>

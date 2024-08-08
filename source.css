@@ -2,3 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'SpotifyMixUI-Regular';
+    src: url('./font/SpotifyMixUI-Regular-cc3b1de388efa4cbca6c75cebc24585e.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'SpotifyMixUI-bold';
+    src: url('./font/SpotifyMixUI-Bold-4264b799009b1db5c491778b1bc8e5b7.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+  }

@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'Spotify-Regular': ['SpotifyMixUI-Regular', 'sans-serif'],
+        'Spotify-bold': ['SpotifyMixUI-bold', 'sans-serif']
+      },
+    },
   },
   plugins: [],
 }
