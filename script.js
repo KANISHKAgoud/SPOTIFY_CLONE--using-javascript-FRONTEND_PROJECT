@@ -25,34 +25,63 @@ async function main() {
 main()
 
 // LEFT PANEL STARTS FROM HERE  *****
-let search_left=document.getElementsByClassName("search-left-panel")
-search_left= addEventListener("click", (e) => { 
-    e.stopImmediatePropagation() 
-    let search_leftPanel= document.createElement("input")
-    // search_leftPanel.innerHTML= search_leftPanel.innerHTML + "type="text" placeholder="What do you want to play?" "
-    search_leftPanel.setAttribute('type', 'text')
-    search_leftPanel.setAttribute('placeholder', 'Enter your name')
-    search_leftPanel.setAttribute('style', 'width: 100px; height: 50px;')
-    document.querySelector(".right-header-backsymbols").append("div")
+let search_left=document.querySelector(".search-left-panel");
+search_left.addEventListener("click", (e) => { 
+    e.stopImmediatePropagation();
+    let search_title = document.querySelector(".title-rightpanel")
+    search_title.innerHTML= "Browse all"
+    let search_leftPanel= document.querySelector(".search-header-leftPanel");
+    search_leftPanel.classList.remove("hidden");
+
+    let search_containers = document.querySelector(".container-search-click")
+    search_containers.classList.remove("hidden");
+
+    let photos_artists = document.querySelectorAll(".photos-cards");
+    for (let index = 0; index < photos_artists.length; index++) {
+        const element = photos_artists[index];
+        element.classList.add("hidden");
+    }
 }
-)
+);
 
 //rightpanel show photos ******
 
-let show_photos= document.querySelector(".show-all-right-panel")
-show_photos=addEventListener("click", (element) => {
-    let photos_container_artists = document.getElementById("containers-photos")
-    photos_container_artists.classList.add("flex-wrap")
-    let main_body_right_side= document.getElementById("main-content-right-panel")
-    main_body_right_side.classList.add("overflow-y-hidden" ,"scrollable")
-    let photos_invisible_artists = document.querySelectorAll(".photos-cards-invisible")
+let back_button_left = document.querySelector(".back-button")
+back_button_left.addEventListener("click", (element) => {
+    let photos_invisible_artists = document.querySelectorAll(".photos-cards-invisible");
     for (let index = 0; index < photos_invisible_artists.length; index++) {
         const element = photos_invisible_artists[index];
-        element.classList.remove("hidden")
-        element.classList.add("opacity-100")
+        element.classList.add("hidden");
+    }
+
+    let search_leftPanel= document.querySelector(".search-header-leftPanel");
+    search_leftPanel.classList.add("hidden");
+
+    let search_containers = document.querySelector(".container-search-click")
+    search_containers.classList.add("hidden");
+
+    let photos_artists = document.querySelectorAll(".photos-cards");
+    for (let index = 0; index < photos_artists.length; index++) {
+        const element = photos_artists[index];
+        element.classList.remove("hidden");
     }
 }
 )
+
+let show_photos= document.querySelector(".show-all-right-panel");
+show_photos.addEventListener("click", (element) => {
+    let photos_container_artists = document.getElementById("containers-photos");
+    photos_container_artists.classList.add("flex-wrap");
+    let main_body_right_side= document.getElementById("main-content-right-panel");
+    main_body_right_side.classList.add("overflow-y-hidden" ,"scrollable");
+    let photos_invisible_artists = document.querySelectorAll(".photos-cards-invisible");
+    for (let index = 0; index < photos_invisible_artists.length; index++) {
+        const element = photos_invisible_artists[index];
+        element.classList.remove("hidden");
+        element.classList.add("opacity-100");
+    }
+}
+);
 
 
 
