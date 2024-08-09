@@ -45,7 +45,7 @@ search_left.addEventListener("click", (e) => {
 );
 
 //rightpanel show photos ******
-
+// Back button 
 let back_button_left = document.querySelector(".back-button")
 back_button_left.addEventListener("click", (element) => {
     let photos_invisible_artists = document.querySelectorAll(".photos-cards-invisible");
@@ -68,6 +68,8 @@ back_button_left.addEventListener("click", (element) => {
 }
 )
 
+
+// FIRST PHOTOS INVISIBLE
 let show_photos= document.querySelector(".show-all-right-panel");
 show_photos.addEventListener("click", (element) => {
     let photos_container_artists = document.getElementById("containers-photos");
@@ -79,6 +81,17 @@ show_photos.addEventListener("click", (element) => {
         const element = photos_invisible_artists[index];
         element.classList.remove("hidden");
         element.classList.add("opacity-100");
+    }
+}
+);
+
+// Second photos invisible
+let show_albums = document.querySelector(".show-all-right-panel-albums");
+show_albums.addEventListener("click", (element) => {
+    let photos_invisible_albums = document.querySelectorAll(".photos-albums-invisible");
+    for (let index = 0; index < photos_invisible_albums.length; index++) {
+        const element = photos_invisible_albums[index];
+        element.classList.remove("hidden");
     }
 }
 );

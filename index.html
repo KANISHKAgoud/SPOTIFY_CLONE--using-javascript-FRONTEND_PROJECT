@@ -238,13 +238,13 @@
                      <div class="container2-albums">
                         <div class="flex justify-between pt-[3%] px-[2%]">
                             <div class="title-rightpanel text-white text-2xl hover:decoration-solid hover:decoration-[#fcfafa] hover:decoration-2 hover:underline cursor-pointer">Popular albums</div>
-                            <button class="show-all-right-panel text-[#b3b3b3] cursor-pointer hover:decoration-solid hover:decoration-[#b3b3b3] hover:decoration-2 hover:underline">Show all</button>
+                            <button class="show-all-right-panel-albums text-[#b3b3b3] cursor-pointer hover:decoration-solid hover:decoration-[#b3b3b3] hover:decoration-2 hover:underline">Show all</button>
                         </div>
 
                     </div>
-                    <div class="flex">
+                    <div class="flex items-start flex-wrap">
 
-                        <div class="photos-cards relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
+                        <div class="photos-cards relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[0px]">
                             <img class="w-[100%] h-[75%] " src="photos/Albums_1.jpeg" alt="love hotel">
                             <div class="text-base text-white pt-[2%] ">love hotel</div>
                             <div class="text-sm text-[#b3b3b3]">leftovermax</div>
@@ -252,7 +252,7 @@
                                 <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
                             </div>
                         </div>  
-                        <div class="photos-cards relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
+                        <div class="photos-cards relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[5px]">
                             <img class="w-[100%] h-[75%] " src="photos/Albums_2.jpeg" alt="Aashiqui 2">
                             <div class="text-base text-white pt-[2%] ">Aashiqui 2</div>
                             <div class="text-sm text-[#b3b3b3]">Mithoon, Ankit Tiwari , Jeet Gannguli</div>
@@ -261,7 +261,7 @@
                             </div>
                         </div>  
 
-                        <div class="photos-cards relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
+                        <div class="photos-cards relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[0px]">
                             <img class="w-[100%] h-[75%] " src="photos/Albums_3.jpeg" alt="Ek tha raja">
                             <div class="text-base text-white pt-[2%] ">Ek tha raja</div>
                             <div class="text-sm text-[#b3b3b3]">Badshah</div>
@@ -269,7 +269,7 @@
                                 <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
                             </div>
                         </div>  
-                        <div class="photos-cards relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
+                        <div class="photos-cards relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[5px]">
                             <img class="w-[100%] h-[75%] " src="photos/Albums_4.jpeg" alt="Animal">
                             <div class="text-base text-white pt-[2%] ">Animal</div>
                             <div class="text-sm text-[#b3b3b3]">Manan Bhardwaj, Vishal Mishra ,Jaani</div>
@@ -278,7 +278,7 @@
                             </div>
                         </div>  
 
-                        <div class="photos-cards relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
+                        <div class="photos-cards relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[12px]">
                             <img class="w-[100%] h-[75%] " src="photos/Albums_5.jpeg" alt="Sajni">
                             <div class="text-base text-white pt-[2%] ">Sajni[From-"Laapataa ladies"]</div>
                             <div class="text-sm text-[#b3b3b3]">Ram Sampath,Arijit Singh,Prashant Pandey</div>
@@ -286,6 +286,51 @@
                                 <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
                             </div>
                         </div>  
+
+                        <!-- ALBUMS MAIN CONTENTS INVISIBLE -->
+                        <div class="photos-albums-invisible relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[0px] hidden">
+                            <img class="w-[100%] h-[75%] " src="photos/Albums_1.jpeg" alt="love hotel">
+                            <div class="text-base text-white pt-[2%] ">love hotel</div>
+                            <div class="text-sm text-[#b3b3b3]">leftovermax</div>
+                            <div class="playbutton w-14 h-14 bg-[#1abc54] top-[53%] left-[60%] rounded-[100%] flex items-center justify-center absolute opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                                <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
+                            </div>
+                        </div>  
+                        <div class="photos-albums-invisible relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[5px] hidden">
+                            <img class="w-[100%] h-[75%] " src="photos/Albums_2.jpeg" alt="Aashiqui 2">
+                            <div class="text-base text-white pt-[2%] ">Aashiqui 2</div>
+                            <div class="text-sm text-[#b3b3b3]">Mithoon, Ankit Tiwari , Jeet Gannguli</div>
+                            <div class="playbutton w-14 h-14 bg-[#1abc54] top-[53%] left-[60%] rounded-[100%] flex items-center justify-center absolute opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                                <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
+                            </div>
+                        </div>  
+
+                        <div class="photos-albums-invisible relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[0px] hidden">
+                            <img class="w-[100%] h-[75%] " src="photos/Albums_3.jpeg" alt="Ek tha raja">
+                            <div class="text-base text-white pt-[2%] ">Ek tha raja</div>
+                            <div class="text-sm text-[#b3b3b3]">Badshah</div>
+                            <div class="playbutton w-14 h-14 bg-[#1abc54] top-[53%] left-[60%] rounded-[100%] flex items-center justify-center absolute opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                                <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
+                            </div>
+                        </div>  
+                        <div class="photos-albums-invisible relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[5px] hidden">
+                            <img class="w-[100%] h-[75%] " src="photos/Albums_4.jpeg" alt="Animal">
+                            <div class="text-base text-white pt-[2%] ">Animal</div>
+                            <div class="text-sm text-[#b3b3b3]">Manan Bhardwaj, Vishal Mishra ,Jaani</div>
+                            <div class="playbutton w-14 h-14 bg-[#1abc54] top-[53%] left-[60%] rounded-[100%] flex items-center justify-center absolute opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                                <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
+                            </div>
+                        </div>  
+
+                        <div class="photos-albums-invisible relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[12px] hidden">
+                            <img class="w-[100%] h-[75%] " src="photos/Albums_5.jpeg" alt="Sajni">
+                            <div class="text-base text-white pt-[2%] ">Sajni[From-"Laapataa ladies"]</div>
+                            <div class="text-sm text-[#b3b3b3]">Ram Sampath,Arijit Singh,Prashant Pandey</div>
+                            <div class="playbutton w-14 h-14 bg-[#1abc54] top-[53%] left-[60%] rounded-[100%] flex items-center justify-center absolute opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                                <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
+                            </div>
+                        </div>
+
                     </div>
 
 
