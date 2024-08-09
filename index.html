@@ -18,18 +18,20 @@
                 <img class="ml-[7%] my-[5%] invert" src="svgs/logo.svg" alt="">
                 <div class="text-2xl ml-[7%] my-[2%]">
                     <i class="fa-solid fa-house mr-[5%]"></i>
-                    <span class="text-lg"> Home</span>
+                    <span class="text-lg cursor-pointer hover:decoration-solid hover:decoration-[#fefdfd] hover:decoration-2 hover:underline "> Home</span>
                 </div>
                 <div class="text-2xl ml-[7%] mt-[3%] mb-[8%]">
                     <i class="fa-solid fa-magnifying-glass mr-[5%]"></i>
-                    <span class="text-lg text-[#b3b3b3]"> Search</span>
+                    <span class="search-left-panel text-lg text-[#b3b3b3] cursor-pointer hover:decoration-solid hover:decoration-[#b3b3b3] hover:decoration-2 hover:underline"> Search</span>
                 </div>
             </div>
             <div class="left-box-two bg-[#121212] w-11/12 rounded-xl mb-[20%]">
-                    <div class="text-2xl flex ml-[7%] mt-[6%] gap-x-[3%] text-[#b3b3b3]">
-                        <img class="invert" src="svgs/library.svg" alt="library">
-                        <span class="text-lg "> Your Library</span>
-                        <i class="fa-solid fa-plus ml-[19%]"></i>
+                    <div class="text-2xl flex ml-[7%] mt-[6%] text-[#b3b3b3] justify-between">
+                        <div class="hover:text-white cursor-pointer flex">
+                            <img class="invert" src="svgs/library.svg" alt="library">
+                            <span class="text-lg"> Your Library</span>
+                        </div>
+                        <i class="fa-solid fa-plus mr-[7%]"></i>
                     </div>
 
                 <div class="mt-8">
@@ -51,41 +53,41 @@
 
                 <div class="text-xs text-[#b3b3b3] mt-10 ml-[4%]">
                     <div class="flex gap-x-[6%] flex-wrap">
-                        <span class="mb-3">Legal</span>
-                        <span class="mb-3">Safety &amp; Privacy Center</span>
-                        <span class="mb-3">Privacy Policy</span>
-                        <span class="mb-3">Cookies</span>
-                        <span class="mb-3">About Ads</span>
-                        <span class="mb-3">Accessibility</span>
+                        <span class="mb-3 cursor-pointer">Legal</span>
+                        <span class="mb-3 cursor-pointer">Safety &amp; Privacy Center</span>
+                        <span class="mb-3 cursor-pointer">Privacy Policy</span>
+                        <span class="mb-3 cursor-pointer">Cookies</span>
+                        <span class="mb-3 cursor-pointer">About Ads</span>
+                        <span class="mb-3 cursor-pointer">Accessibility</span>
                     </div>
-                    <span>Cookies</span>
+                    <span class="cursor-pointer hover:decoration-solid hover:decoration-[#b3b3b3] hover:decoration-2 hover:underline">Cookies</span>
                 </div>
 
-                <div class="my-9 border-2 border-white w-[33%] h-8 rounded-2xl flex justify-center items-center gap-x-1">
-                    <i class="fa-solid fa-globe"></i>English
+                <div class="my-9 border-[1px] border-white w-[33%] h-8 rounded-2xl flex justify-center items-center gap-x-1 cursor-pointer hover:border-2 p-1">
+                    <i class="fa-solid fa-globe "></i>English
                 </div>
             </div>
         </div>
 
-        <!-- OUR RIGHT SIDE IS STARTING FROM HERE   -->
+<!-- OUR RIGHT SIDE IS STARTING FROM HERE   -->
         <div class="right-panel w-3/4 h-full bg-black p-[0.5%] ">
             <header class="text-white bg-[#121212] px-[3%] py-[1%] rounded-t-xl flex justify-between items-center h-[10%]">
-                <div class="flex gap-x-8">
+                <div class="right-header-backsymbols flex gap-x-8">
                     <i class="fa-solid fa-chevron-left"></i>
                     <i class="fa-solid fa-chevron-right"></i>
                 </div>
                 <div class="flex items-center gap-x-8">
-                    <div class="text-[#b3b3b3] hover:text-white hover:text-lg cursor-pointer">Sign up</div>
+                    <div class="text-[#b3b3b3] hover:text-white hover:text-lg cursor-pointer ">Sign up</div>
                     <button class="bg-white text-black w-28 h-12 rounded-3xl hover:w-32 hover:bg-[#d9d7d7]">Log in</button>
                 </div>
             </header>
 
-            <div class="bg-[#1f1f1f] h-[90%]">
+            <div id="main-content-right-panel" class="bg-[#1f1f1f] h-[90%]">
                 <div class="flex justify-between pt-[5%] px-[2%]">
-                    <div class="text-white text-2xl">Popular artists</div>
-                    <div class="text-[#b3b3b3]">Show all</div>
+                    <div class="text-white text-2xl hover:decoration-solid hover:decoration-[#fcfafa] hover:decoration-2 hover:underline cursor-pointer">Popular artists</div>
+                    <button class="show-all-right-panel text-[#b3b3b3] cursor-pointer hover:decoration-solid hover:decoration-[#b3b3b3] hover:decoration-2 hover:underline">Show all</button>
                 </div>
-                <div class="containers-photos p-[0.7%] flex">
+                <div id="containers-photos" class=" p-[0.7%] flex cursor-pointer">
                     <div class="photos-cards relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
                         <img class="w-[100%] h-[75%] rounded-full" src="photos/Pritam.jpeg" alt="Pritam">
                         <div class="text-base text-white pt-[2%]">Pritam</div>
@@ -129,14 +131,76 @@
                         <div class="playbutton w-14 h-14 bg-[#1abc54] top-[53%] left-[60%] rounded-[100%] flex items-center justify-center absolute opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                             <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
                         </div>
-                    </div>                   
+                    </div>   
+<!-- NEW BOXES ADDED FROM HERE FOR THE PHOTOS CARD INVISIBLE -->
+                    <div id="photos-cards-invisible" class="photos-cards-invisible relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden">
+                        <img class="w-[100%] h-[75%] rounded-full" src="photos/Anirudh ravinchander.jpeg" alt="Anirudh Ravichander">
+                        <div class="text-base text-white pt-[2%] ">Anirudh Ravichander</div>
+                        <div class="text-sm text-[#b3b3b3]">Artist</div>
+                        <div class="playbutton w-14 h-14 bg-[#1abc54] top-[53%] left-[60%] rounded-[100%] flex items-center justify-center absolute opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                            <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                    </div>   
+                    
+
+                    <div id="photos-cards-invisible" class="photos-cards-invisible relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden">
+                        <img class="w-[100%] h-[75%] rounded-full" src="photos/Anirudh ravinchander.jpeg" alt="Anirudh Ravichander">
+                        <div class="text-base text-white pt-[2%] ">Anirudh Ravichander</div>
+                        <div class="text-sm text-[#b3b3b3]">Artist</div>
+                        <div class="playbutton w-14 h-14 bg-[#1abc54] top-[53%] left-[60%] rounded-[100%] flex items-center justify-center absolute opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                            <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                    </div>   
+                    
+
+                    <div id="photos-cards-invisible" class="photos-cards-invisible relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden">
+                        <img class="w-[100%] h-[75%] rounded-full" src="photos/Anirudh ravinchander.jpeg" alt="Anirudh Ravichander">
+                        <div class="text-base text-white pt-[2%] ">Anirudh Ravichander</div>
+                        <div class="text-sm text-[#b3b3b3]">Artist</div>
+                        <div class="playbutton w-14 h-14 bg-[#1abc54] top-[53%] left-[60%] rounded-[100%] flex items-center justify-center absolute opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                            <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                    </div>   
+                    
+
+                    <div id="photos-cards-invisible" class="photos-cards-invisible relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden">
+                        <img class="w-[100%] h-[75%] rounded-full" src="photos/Anirudh ravinchander.jpeg" alt="Anirudh Ravichander">
+                        <div class="text-base text-white pt-[2%] ">Anirudh Ravichander</div>
+                        <div class="text-sm text-[#b3b3b3]">Artist</div>
+                        <div class="playbutton w-14 h-14 bg-[#1abc54] top-[53%] left-[60%] rounded-[100%] flex items-center justify-center absolute opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                            <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                    </div>   
+                    
+
+                    <div id="photos-cards-invisible" class="photos-cards-invisible relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden">
+                        <img class="w-[100%] h-[75%] rounded-full" src="photos/Anirudh ravinchander.jpeg" alt="Anirudh Ravichander">
+                        <div class="text-base text-white pt-[2%] ">Anirudh Ravichander</div>
+                        <div class="text-sm text-[#b3b3b3]">Artist</div>
+                        <div class="playbutton w-14 h-14 bg-[#1abc54] top-[53%] left-[60%] rounded-[100%] flex items-center justify-center absolute opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                            <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                    </div>  
+
+                    <div id="photos-cards-invisible" class="photos-cards-invisible relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden">
+                        <img class="w-[100%] h-[75%] rounded-full" src="photos/Anirudh ravinchander.jpeg" alt="Anirudh Ravichander">
+                        <div class="text-base text-white pt-[2%] ">Anirudh Ravichander</div>
+                        <div class="text-sm text-[#b3b3b3]">Artist</div>
+                        <div class="playbutton w-14 h-14 bg-[#1abc54] top-[53%] left-[60%] rounded-[100%] flex items-center justify-center absolute opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                            <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                    </div>   
+                    
+                    
+
+
                 </div>
             </div>
         </div>
 
     </div>
     <!-- PLAYING THE SONGS STARTS FROM HERE  -->
-     <div class="w-full h-[13%] absolute bg-black bottom-3 ">
+     <div class="w-full h-[13%] absolute bg-black bottom-0 ">
         <div class="text-white flex justify-center gap-x-[2%] text-xl">
             <i class="fa-solid fa-backward-step"></i>
             <i class="fa-regular fa-circle-play"></i>
