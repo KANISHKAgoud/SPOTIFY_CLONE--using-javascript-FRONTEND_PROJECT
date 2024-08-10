@@ -72,17 +72,36 @@ back_button_left.addEventListener("click", (element) => {
         element.classList.remove("hidden");
     }
 
+    //2nd row
+
     let photos_albums = document.querySelectorAll(".photos-albums");
     for (let index = 0; index < photos_albums.length; index++) {
         const element = photos_albums[index];
         element.classList.remove("hidden");
-        element.classList.add("w-[19.8%]");
+        element.classList.add("w-[19.1%]");
     }
 
     let photos_invisible_albums = document.querySelectorAll(".photos-albums-invisible");
     for (let index = 0; index < photos_invisible_albums.length; index++) {
         const element = photos_invisible_albums[index];
-        element.classList.add("hidden");
+        element.classList.add("hidden")
+    }
+
+    let main_body_right_side_2ndrow= document.querySelector(".container2-albums");
+    main_body_right_side_2ndrow.classList.remove("hidden");
+
+    //1st row 
+    let main_body_right_side_1strow= document.querySelector(".content-right-1strow");
+    main_body_right_side_1strow.classList.remove("hidden");
+
+    // 3rd row
+    let main_body_right_side_3rdrow= document.querySelector(".Feature-title");
+    main_body_right_side_3rdrow.classList.remove("hidden");
+
+    let photos_features = document.querySelectorAll(".photos-features");
+    for (let index = 0; index < photos_features.length; index++) {
+        const element = photos_features[index];
+        element.classList.remove("hidden");
     }
 }
 )
@@ -101,6 +120,27 @@ show_photos.addEventListener("click", (element) => {
         element.classList.remove("hidden");
         element.classList.add("opacity-100");
     }
+
+    //2nd row
+    let photos_albums = document.querySelectorAll(".photos-albums");
+    for (let index = 0; index < photos_albums.length; index++) {
+        const element = photos_albums[index];
+        element.classList.add("hidden");
+    }
+
+    let main_body_right_side_2ndrow= document.querySelector(".container2-albums");
+    main_body_right_side_2ndrow.classList.add("hidden");
+
+    //3rd row
+    let main_body_right_side_3rdrow= document.querySelector(".Feature-title");
+    main_body_right_side_3rdrow.classList.add("hidden");
+
+    let photos_features = document.querySelectorAll(".photos-features");
+    for (let index = 0; index < photos_features.length; index++) {
+        const element = photos_features[index];
+        element.classList.add("hidden");
+    }
+
 }
 );
 
@@ -111,6 +151,12 @@ show_albums.addEventListener("click", (element) => {
     let photos_artists = document.querySelectorAll(".photos-cards");
     for (let index = 0; index < photos_artists.length; index++) {
         const element = photos_artists[index];
+        element.classList.add("hidden");
+    }
+
+    let photos_features = document.querySelectorAll(".photos-features");
+    for (let index = 0; index < photos_features.length; index++) {
+        const element = photos_features[index];
         element.classList.add("hidden");
     }
 
@@ -129,6 +175,12 @@ show_albums.addEventListener("click", (element) => {
 
     let main_body_right_side_1strow= document.querySelector(".content-right-1strow");
     main_body_right_side_1strow.classList.add("hidden");
+
+    // let main_body_right_side_2ndrow= document.querySelector(".container2-albums");
+    // main_body_right_side_2ndrow.classList.remove("hidden");
+
+    let main_body_right_side_3rdrow= document.querySelector(".Feature-title");
+    main_body_right_side_3rdrow.classList.add("hidden");
 }
 );
 
