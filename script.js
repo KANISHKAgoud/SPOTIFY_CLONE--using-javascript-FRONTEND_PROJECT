@@ -41,6 +41,12 @@ search_left.addEventListener("click", (e) => {
         const element = photos_artists[index];
         element.classList.add("hidden");
     }
+
+    let photos_albums = document.querySelectorAll(".photos-albums");
+    for (let index = 0; index < photos_albums.length; index++) {
+        const element = photos_albums[index];
+        element.classList.add("hidden");
+    }
 }
 );
 
@@ -65,6 +71,19 @@ back_button_left.addEventListener("click", (element) => {
         const element = photos_artists[index];
         element.classList.remove("hidden");
     }
+
+    let photos_albums = document.querySelectorAll(".photos-albums");
+    for (let index = 0; index < photos_albums.length; index++) {
+        const element = photos_albums[index];
+        element.classList.remove("hidden");
+        element.classList.add("w-[19.8%]");
+    }
+
+    let photos_invisible_albums = document.querySelectorAll(".photos-albums-invisible");
+    for (let index = 0; index < photos_invisible_albums.length; index++) {
+        const element = photos_invisible_albums[index];
+        element.classList.add("hidden");
+    }
 }
 )
 
@@ -88,11 +107,28 @@ show_photos.addEventListener("click", (element) => {
 // Second photos invisible
 let show_albums = document.querySelector(".show-all-right-panel-albums");
 show_albums.addEventListener("click", (element) => {
+    
+    let photos_artists = document.querySelectorAll(".photos-cards");
+    for (let index = 0; index < photos_artists.length; index++) {
+        const element = photos_artists[index];
+        element.classList.add("hidden");
+    }
+
+    let photos_albums = document.querySelectorAll(".photos-albums");
+    for (let index = 0; index < photos_albums.length; index++) {
+        const element = photos_albums[index];
+        element.classList.add("w-[25%]");
+    }
+
     let photos_invisible_albums = document.querySelectorAll(".photos-albums-invisible");
     for (let index = 0; index < photos_invisible_albums.length; index++) {
         const element = photos_invisible_albums[index];
         element.classList.remove("hidden");
+        element.classList.add("w-[25%]");
     }
+
+    let main_body_right_side_1strow= document.querySelector(".content-right-1strow");
+    main_body_right_side_1strow.classList.add("hidden");
 }
 );
 
