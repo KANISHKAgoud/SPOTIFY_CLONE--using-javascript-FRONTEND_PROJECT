@@ -13,12 +13,13 @@
 
 <body class="h-screen relative">
     <div class="page flex font-Spotify-bold bg-black h-screen">
+        <!-- LEFT SIDE IS STARTING FROM HERE -->
         <div class="left-panel w-1/4 text-white h-screen flex flex-col justify-center items-center">
             <div class="left-box-one bg-[#121212] w-11/12 flex flex-col my-[2%]  rounded-xl">
                 <img class="ml-[7%] my-[5%] invert" src="svgs/logo.svg" alt="">
-                <div class="text-2xl ml-[7%] my-[2%]">
+                <div class="home-left-panel text-2xl ml-[7%] my-[2%]">
                     <i class="fa-solid fa-house mr-[5%]"></i>
-                    <span class="text-lg cursor-pointer hover:decoration-solid hover:decoration-[#fefdfd] hover:decoration-2 hover:underline "> Home</span>
+                    <span class=" text-lg cursor-pointer hover:decoration-solid hover:decoration-[#fefdfd] hover:decoration-2 hover:underline "> Home</span>
                 </div>
                 <div class="search-left-panel text-2xl ml-[7%] mt-[3%] mb-[8%]">
                     <i class="fa-solid fa-magnifying-glass mr-[5%]"></i>
@@ -87,7 +88,7 @@
                 </div>
             </header>
 
-            <div id="main-content-right-panel" class="bg-[#1f1f1f] h-[70%] overflow-y-hidden scrollable">
+            <div id="main-content-right-panel" class="bg-[#1f1f1f] h-[81%] overflow-y-hidden scrollable">
                 <div class="content-right-1strow flex justify-between pt-[5%] px-[2%]">
                     <div class="title-rightpanel text-white text-2xl hover:decoration-solid hover:decoration-[#fcfafa] hover:decoration-2 hover:underline cursor-pointer">Popular artists</div>
                     <button class="show-all-right-panel text-[#b3b3b3] cursor-pointer hover:decoration-solid hover:decoration-[#b3b3b3] hover:decoration-2 hover:underline">Show all</button>
@@ -203,7 +204,7 @@
                     
                     
                     <!-- ADDING THE SEARCH HOVER THINGS     -->
-                    <div class="container-search-click px-[2%] flex flex-wrap gap-x-[3%] gap-y-[3%] h-[90%] hidden">
+                    <div class="container-search-click px-[2%] flex flex-wrap gap-x-[3%] gap-y-8 h-[90%] hidden">
                         <div class="border-2 border-white bg-pink-600 w-[29.8%] h-[24vh] rounded-xl overflow-hidden cursor-pointer">
                             <div class="text-white text-2xl pt-[4%] pl-[6%]">Music</div>
                             <img class="w-[50%] h-[80%] rotate-[28deg] ml-[59%]" src="photos/photo-search-3.jpeg" alt="taylor">
@@ -451,7 +452,7 @@
 
 
     <!-- PLAYING THE SONGS STARTS FROM HERE  -->
-     <div class="w-full h-[13%] absolute bg-black bottom-0 ">
+     <div class="w-full absolute bg-black bottom-0 ">
         <div class="text-white flex justify-center gap-x-[2%] text-xl">
             <i class="fa-solid fa-backward-step"></i>
             <i class="fa-regular fa-circle-play"></i>
