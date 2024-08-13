@@ -14,7 +14,7 @@
 <body class="h-screen relative">
     <div class="page flex font-Spotify-bold bg-black h-screen">
         <!-- LEFT SIDE IS STARTING FROM HERE -->
-        <div class="left-panel w-1/4 text-white h-screen flex flex-col justify-center items-center">
+        <div class="left-panel w-1/4 text-white h-screen flex flex-col justify-center items-center relative">
             <div class="left-box-one bg-[#121212] w-11/12 flex flex-col my-[2%]  rounded-xl">
                 <img class="ml-[7%] my-[5%] invert" src="svgs/logo.svg" alt="">
                 <div class="home-left-panel text-2xl ml-[7%] my-[2%]">
@@ -27,13 +27,20 @@
                 </div>
             </div>
             <div class="left-box-two bg-[#121212] w-11/12 rounded-xl mb-[20%]">
-                    <div class="text-2xl flex ml-[7%] mt-[6%] text-[#b3b3b3] justify-between">
+                    <div class="left-library text-2xl flex ml-[7%] mt-[6%] text-[#b3b3b3] justify-between">
                         <div class="hover:text-white cursor-pointer flex">
                             <img class="invert" src="svgs/library.svg" alt="library">
                             <span class="text-lg"> Your Library</span>
                         </div>
                         <i class="fa-solid fa-plus mr-[7%]"></i>
                     </div>
+
+                    <div class="absolute top-64 left-20">
+                        <div class="w-28 bg-[#292929] h-6 text-white text-center">
+                            Your Library
+                        </div>
+                    </div>
+                      
 
                 <div class="mt-8">
                     <div class="px-[3%] h-24 flex flex-col">

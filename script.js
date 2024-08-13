@@ -76,6 +76,13 @@ search_left.addEventListener("click", (e) => {
 }
 );
 
+//LIBRARY BUTTON
+let LIBRARY_button_right = document.querySelector(".left-library")
+LIBRARY_button_right.addEventListener("", (element) => {
+  
+}
+)
+
 //HOME BUTTON
 let HOME_button_right = document.querySelector(".home-left-panel")
 HOME_button_right.addEventListener("click", (element) => {
