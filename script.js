@@ -17,7 +17,7 @@ async function getsongs()
     }
     return songs
 }
-    
+
 async function main() {
     let songs = await getsongs();
     console.log(songs)
@@ -73,15 +73,30 @@ search_left.addEventListener("click", (e) => {
     back_button_left.classList.add( "text-white")
     back_button_left.classList.add("text-xl")
 
+    //HOME button
+    let home_button_left = document.querySelector(".home-left-panel")
+    home_button_left.classList.add("font-extrabold")
+    home_button_left.classList.add( "text-white")
+    home_button_left.classList.add("text-3xl")
+
 }
 );
 
 //LIBRARY BUTTON
 let LIBRARY_button_right = document.querySelector(".left-library")
-LIBRARY_button_right.addEventListener("", (element) => {
-  
-}
-)
+LIBRARY_button_right.addEventListener("mouseover", (event) => {
+
+    let library_hover = document.querySelector(".left_library_hover")
+    library_hover.classList.add("opacity-100")
+});
+
+let LIBRARY_button_right_mouseout = document.querySelector(".left-library")
+LIBRARY_button_right.addEventListener("mouseout", (event) => {
+
+    let library_hover = document.querySelector(".left_library_hover")
+    library_hover.classList.remove("opacity-100")
+});
+
 
 //HOME BUTTON
 let HOME_button_right = document.querySelector(".home-left-panel")
@@ -139,6 +154,10 @@ HOME_button_right.addEventListener("click", (element) => {
     //back button back to original
     let back_button_left = document.querySelector(".back-button")
     back_button_left.classList.remove("font-extrabold", "text-white", "text-xl")
+
+    //home button back to original
+    let home_button_left = document.querySelector(".home-left-panel")
+    home_button_left.classList.remove("text-3xl")
 }
 )
 
@@ -163,6 +182,7 @@ back_button_left.addEventListener("click", (element) => {
         const element = photos_artists[index];
         element.classList.remove("hidden");
     }
+
 
     //2nd row
 
@@ -194,11 +214,15 @@ back_button_left.addEventListener("click", (element) => {
     for (let index = 0; index < photos_features.length; index++) {
         const element = photos_features[index];
         element.classList.remove("hidden");
-    }
 
+    }
     //back button back to original
     let back_button_left = document.querySelector(".back-button")
     back_button_left.classList.remove("font-extrabold", "text-white", "text-xl")
+
+    //home button back to original
+    let home_button_left = document.querySelector(".home-left-panel")
+    home_button_left.classList.remove("text-3xl")
 }
 )
 
@@ -241,6 +265,12 @@ show_photos.addEventListener("click", (element) => {
         const element = photos_features[index];
         element.classList.add("hidden");
     }
+
+    //HOME button
+    let home_button_left = document.querySelector(".home-left-panel")
+    home_button_left.classList.add("font-extrabold")
+    home_button_left.classList.add( "text-white")
+    home_button_left.classList.add("text-3xl")
 
 }
 );
@@ -288,6 +318,12 @@ show_albums.addEventListener("click", (element) => {
     back_button_left.classList.add("font-extrabold")
     back_button_left.classList.add( "text-white")
     back_button_left.classList.add("text-xl")
+
+    //HOME button
+    let home_button_left = document.querySelector(".home-left-panel")
+    home_button_left.classList.add("font-extrabold")
+    home_button_left.classList.add( "text-white")
+    home_button_left.classList.add("text-3xl")
 }
 );
 
