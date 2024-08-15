@@ -18,11 +18,32 @@ async function getsongs()
     return songs
 }
 
-async function main() {
-    let songs = await getsongs();
-    console.log(songs)
+let currentAudio = null;
+
+async function playsongs(songs) {
+    let allplaybuttons = document.body.querySelectorAll(".playbutton");
+
+    for (let index = 0; index < allplaybuttons.length; index++) {
+        let element = allplaybuttons[index];
+        
+        element.addEventListener("click", () => {
+            if (currentAudio && !currentAudio.paused) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0; 
+                currentAudio = null; 
+
+                element.querySelector("i").classList.remove("fa-pause");
+                element.querySelector("i").classList.add("fa-play");
+            } else {
+                currentAudio = new Audio(songs[index]);
+                currentAudio.play();
+
+                element.querySelector("i").classList.remove("fa-play");
+                element.querySelector("i").classList.add("fa-pause");
+            }
+        });
+    }
 }
-main()
 
 // LEFT PANEL STARTS FROM HERE  *****
 
@@ -328,81 +349,10 @@ show_albums.addEventListener("click", (element) => {
 );
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // let allplaybuttons = document.body.querySelectorAll(".playbutton")
-    // let currentAudio =null;
-    // for (let index = 0; index < allplaybuttons.length; index++) {
-    //     let element = allplaybuttons[index]
-    //     element = addEventListener ("click", () => {
-    //         // var audio= new Audio(songs[index]);
-    //         // audio.addEventListener("loadeddata",() => {
-    //         //     let duration = audion.duration
-    //         //     console.log(duration)
-    //         // }
-    //         // )
-    //         // audio.play();
-    //         // if (currentAudio && !currentAudio.paused) {
-    //         //     // Pause the currently playing audio
-    //         //     currentAudio.pause();
-    //         //     currentAudio.currentTime = 0; // Optional: reset the playback position to the start
-    //         // }
+async function main() {
+    let songs = await getsongs();
+    console.log(songs)
+    await playsongs(songs)
     
-    //         // // If the new audio is the same as the currently playing one, stop it
-    //         // if (currentAudio === audio) {
-    //         //     currentAudio = null; // Clear the current audio
-    //         // } else {
-    //         //     // Play the new audio and set it as the current audio
-    //         //     audio.play();
-    //         //     currentAudio = audio;
-    //         // }
-    //         if (currentAudio) {
-    //             if (currentAudio.audioElement.paused) {
-    //                 // If the current audio is paused, play it
-    //                 currentAudio.audioElement.play();
-    //             } else {
-    //                 // Pause and reset the current audio
-    //                 currentAudio.audioElement.pause();
-    //                 currentAudio.audioElement.currentTime = 0;
-    //                 currentAudio = null; // Clear the current audio
-    //             }
-    //         }
-            
-    //         // Create a new Audio object for the clicked button
-    //         let audio = new Audio(songs[index]);
-            
-    //         // Set up the new audio instance
-    //         audio.play();
-            
-    //         // Set the new audio as the current audio
-    //         currentAudio = {
-    //             audioElement: audio
-    //         };
-    //     })
-
-
-
-
-    // let playbutton= addEventListener ("click", (e) => {
-      
-    // }
-    // )
-
-    // for (const element of allplaybutton) {
-        //   if (if playbutton==true){
-            
-        //   } 
-        // }
-
-// playsongs()
+}
+main()
