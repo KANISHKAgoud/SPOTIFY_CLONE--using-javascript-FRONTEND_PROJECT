@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.10 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.8 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -566,48 +566,24 @@ video {
   position: relative;
 }
 
+.-top-2 {
+  top: -0.5rem;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
 
-.left-20 {
-  left: 5rem;
+.left-28 {
+  left: 7rem;
 }
 
 .left-\[60\%\] {
   left: 60%;
 }
 
-.top-64 {
-  top: 16rem;
-}
-
 .top-\[53\%\] {
   top: 53%;
-}
-
-.top-2 {
-  top: 0.5rem;
-}
-
-.top-0 {
-  top: 0px;
-}
-
-.-top-2 {
-  top: -0.5rem;
-}
-
-.left-10 {
-  left: 2.5rem;
-}
-
-.left-32 {
-  left: 8rem;
-}
-
-.left-28 {
-  left: 7rem;
 }
 
 .mx-\[4\%\] {
@@ -662,8 +638,8 @@ video {
   margin-right: 5%;
 }
 
-.mr-\[7\%\] {
-  margin-right: 7%;
+.mr-\[6\%\] {
+  margin-right: 6%;
 }
 
 .mt-10 {
@@ -684,18 +660,6 @@ video {
 
 .mt-\[6\%\] {
   margin-top: 6%;
-}
-
-.mr-\[4\%\] {
-  margin-right: 4%;
-}
-
-.mr-\[2\%\] {
-  margin-right: 2%;
-}
-
-.mr-\[6\%\] {
-  margin-right: 6%;
 }
 
 .flex {
@@ -1149,6 +1113,11 @@ video {
   line-height: 2rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1172,16 +1141,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .font-extrabold {
@@ -1222,12 +1181,6 @@ video {
 
 .transition-transform {
   transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition-opacity {
-  transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1350,10 +1303,6 @@ video {
 
 .hover\:decoration-2:hover {
   text-decoration-thickness: 2px;
-}
-
-.hover\:opacity-100:hover {
-  opacity: 1;
 }
 
 .group:hover .group-hover\:translate-y-0 {
