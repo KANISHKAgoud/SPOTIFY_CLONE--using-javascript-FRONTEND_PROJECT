@@ -12,7 +12,7 @@ async function getsongs()
         const element = anchor[index];
         if (element.href.endsWith("mp3"))
         {
-            songs.push(element)
+            songs.push(element.href.split("/songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", ""))
         }
     }
     return songs
@@ -77,6 +77,7 @@ async function playsongs(songs) {
                 mainPlayButton.classList.remove("fa-circle-play");
                 mainPlayButton.classList.add("fa-circle-pause");
             }
+            
         });
     }
 
@@ -418,6 +419,15 @@ show_albums.addEventListener("click", (element) => {
 async function main() {
     let songs = await getsongs();
     console.log(songs)
+    let song_time = []
+
+    // for (let index = 0; index < songs.length; index++) {
+    //     const element = songs[index];
+    //         let duration = element.duration;
+    //         console.log(duration)
+    // }
+    // console.log(song_time)
+    
     await playsongs(songs)
     
 }
