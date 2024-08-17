@@ -12,7 +12,7 @@
 </head>
 
 <style>
-    @media only screen and (max-width: 1419px)
+    @media only screen and (max-width: 754px)
     {
         .left-panel{
             position: absolute;
@@ -24,13 +24,50 @@
         }
     }
 
-    @media only screen and (max-width: 1081px)
+    @media only screen and (max-width: 550px)
     {
-        .photo-cards-invisible{
-            display: hidden;
-            opacity: 0;
+
+        .photos-cards{
+            width: 25%;
+            height: 32vh;
         }
     }
+
+    @media only screen and (max-width: 538px)
+    {
+        .photos-card-invisible-responsive{
+            display: none;
+        }
+
+        .photos-cards{
+            width: 90vh;
+            height: 42vh;
+        }
+    }
+
+    @media only screen and (max-width: 356px)
+    {
+        .photos-card-invisible-responsive2{
+            display: none;
+        }
+
+        .photos-cards{
+            width: 70vh;
+            height: 32vh;
+        }
+    }
+    
+
+    @media only screen and (max-width: 312px)
+    {
+        .photos-card-invisible-responsive3{
+            display: none;
+        }
+
+    }
+
+
+
 
 
 </style>
@@ -153,7 +190,7 @@
                             </div>
                         </div>
                     
-                        <div class="photos-cards relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
+                        <div class="photos-cards photos-card-invisible-responsive3 relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
                             <img class="w-[100%] h-[75%] rounded-full" src="photos/A.Rahman.jpeg" alt="A.R.Rahman">
                             <div class="text-base text-white pt-[2%] ">A.R.Rahman</div>
                             <div class="text-sm text-[#b3b3b3]">Artist</div>
@@ -162,7 +199,7 @@
                             </div>
                         </div>
                     
-                        <div class="photos-cards relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
+                        <div class="photos-cards photos-card-invisible-responsive2 relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
                             <img class="w-[100%] h-[75%] rounded-full" src="photos/Sachin-jigar.jpeg" alt="Sachin-jigar">
                             <div class="text-base text-white pt-[2%] ">Sachin-jigar</div>
                             <div class="text-sm text-[#b3b3b3]">Artist</div>
@@ -171,7 +208,7 @@
                             </div>
                         </div>
 
-                        <div class="xl:photos-cards relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group sm:photo-cards-invisible">
+                        <div class="photos-cards photos-card-invisible-responsive relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group ">
                             <img class="w-[100%] h-[75%] rounded-full" src="photos/Anirudh ravinchander.jpeg" alt="Anirudh Ravichander">
                             <div class="text-base text-white pt-[2%] ">Anirudh Ravichander</div>
                             <div class="text-sm text-[#b3b3b3]">Artist</div>

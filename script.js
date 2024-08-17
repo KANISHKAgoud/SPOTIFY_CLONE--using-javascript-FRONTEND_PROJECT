@@ -383,6 +383,12 @@ show_photos.addEventListener("click", (element) => {
     photos_container_artists.classList.add("flex-wrap");
     let main_body_right_side= document.getElementById("main-content-right-panel");
     main_body_right_side.classList.add("overflow-y-hidden" ,"scrollable");
+    document.querySelector(".photos-card-invisible-responsive").classList.remove("hidden")
+    document.querySelector(".photos-card-invisible-responsive").classList.add("opacity-100")
+    document.querySelector(".photos-card-invisible-responsive2").classList.remove("hidden")
+    document.querySelector(".photos-card-invisible-responsive2").classList.add("opacity-100")
+    document.querySelector(".photos-card-invisible-responsive3").classList.remove("hidden")
+    document.querySelector(".photos-card-invisible-responsive3").classList.add("opacity-100")
     let photos_invisible_artists = document.querySelectorAll(".photos-cards-invisible");
     for (let index = 0; index < photos_invisible_artists.length; index++) {
         const element = photos_invisible_artists[index];

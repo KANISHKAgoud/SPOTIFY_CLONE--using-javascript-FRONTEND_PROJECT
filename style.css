@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.8 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.10 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -612,14 +612,6 @@ video {
 
 .top-\[53\%\] {
   top: 53%;
-}
-
-.left-full {
-  left: 100%;
-}
-
-.-left-full {
-  left: -100%;
 }
 
 .mx-\[4\%\] {
@@ -1377,137 +1369,5 @@ video {
 
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
-}
-
-@media (min-width: 640px) {
-  .sm\:absolute {
-    position: absolute;
-  }
-
-  .sm\:-left-full {
-    left: -100%;
-  }
-
-  .sm\:hidden {
-    display: none;
-  }
-
-  .sm\:w-full {
-    width: 100%;
-  }
-
-  .sm\:opacity-0 {
-    opacity: 0;
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:absolute {
-    position: absolute;
-  }
-
-  .xl\:-left-full {
-    left: -100%;
-  }
-
-  .xl\:left-full {
-    left: 100%;
-  }
-
-  .xl\:block {
-    display: block;
-  }
-
-  .xl\:w-full {
-    width: 100%;
-  }
-}
-
-@media (min-width: 1536px) {
-  .\32xl\:absolute {
-    position: absolute;
-  }
-
-  .\32xl\:relative {
-    position: relative;
-  }
-
-  .\32xl\:-left-44 {
-    left: -11rem;
-  }
-
-  .\32xl\:-left-96 {
-    left: -24rem;
-  }
-
-  .\32xl\:-left-3\/4 {
-    left: -75%;
-  }
-
-  .\32xl\:-left-2\/4 {
-    left: -50%;
-  }
-
-  .\32xl\:-left-1\/4 {
-    left: -25%;
-  }
-
-  .\32xl\:-left-full {
-    left: -100%;
-  }
-
-  .\32xl\:flex {
-    display: flex;
-  }
-
-  .\32xl\:h-screen {
-    height: 100vh;
-  }
-
-  .\32xl\:h-full {
-    height: 100%;
-  }
-
-  .\32xl\:w-full {
-    width: 100%;
-  }
-
-  .\32xl\:w-96 {
-    width: 24rem;
-  }
-
-  .\32xl\:w-1\/4 {
-    width: 25%;
-  }
-
-  .\32xl\:w-3\/4 {
-    width: 75%;
-  }
-
-  .\32xl\:flex-col {
-    flex-direction: column;
-  }
-
-  .\32xl\:items-center {
-    align-items: center;
-  }
-
-  .\32xl\:justify-center {
-    justify-content: center;
-  }
-
-  .\32xl\:bg-black {
-    --tw-bg-opacity: 1;
-    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-  }
-
-  .\32xl\:p-\[0\.5\%\] {
-    padding: 0.5%;
-  }
-
-  .\32xl\:text-white {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
 }
   
