@@ -117,17 +117,13 @@ async function playsongs(songs) {
         }
     });
 
-    currentAudio.addEventListener("ended", () => {
-        resetProgressBar();  // Reset to the start when the song ends
-        const mainPlayButton = document.querySelector(".mainplay-button");
-        mainPlayButton.classList.remove("fa-circle-pause");
-        mainPlayButton.classList.add("fa-circle-play");
-    
-        if (currentButton) {
-            currentButton.querySelector("i").classList.remove("fa-pause");
-            currentButton.querySelector("i").classList.add("fa-play");
-        }
-    });
+    document.querySelector(".bar-bottom").addEventListener("click", (e) => {
+        let pointer = (e.offsetX/e.target.getBoundingClientRect().width)*100
+        document.querySelector(".circle").style.left = `${pointer}%`;
+        document.querySelector(".progress-bar").style.width = `${pointer}%`
+        currentAudio.currentTime = ((currentAudio.duration)*pointer)/100
+    }
+    )
 }
 function updateProgressBar() {
     const progressBar = document.querySelector(".progress-bar");

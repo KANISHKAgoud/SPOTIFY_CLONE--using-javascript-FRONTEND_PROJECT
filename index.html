@@ -11,6 +11,30 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
+<style>
+    @media only screen and (max-width: 1419px)
+    {
+        .left-panel{
+            position: absolute;
+            left: -100%;
+        }
+
+        .right-panel{
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 1081px)
+    {
+        .photo-cards-invisible{
+            display: hidden;
+            opacity: 0;
+        }
+    }
+
+
+</style>
+
 <body class="h-screen relative">
     <div class="page flex font-Spotify-bold bg-black h-screen">
         <!-- LEFT SIDE IS STARTING FROM HERE -->
@@ -86,7 +110,7 @@
         </div>
 
 <!-- OUR RIGHT SIDE IS STARTING FROM HERE   -->
-        <div class="right-panel w-3/4 h-full bg-black p-[0.5%] ">
+        <div class="right-panel w-3/4 h-full bg-black p-[0.5%]">
             <header class="text-white bg-[#121212] px-[3%] py-[1%] rounded-t-xl flex justify-between items-center h-[10%]">
                 <div class="flex justify-center items-center gap-[7%]">
                     <div class="right-header-backsymbols flex gap-x-8">
@@ -147,7 +171,7 @@
                             </div>
                         </div>
 
-                        <div class="photos-cards relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
+                        <div class="xl:photos-cards relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group sm:photo-cards-invisible">
                             <img class="w-[100%] h-[75%] rounded-full" src="photos/Anirudh ravinchander.jpeg" alt="Anirudh Ravichander">
                             <div class="text-base text-white pt-[2%] ">Anirudh Ravichander</div>
                             <div class="text-sm text-[#b3b3b3]">Artist</div>
@@ -486,7 +510,7 @@
          
             
         <div class="flex mb-4">
-            <div class="bar-bottom w-full h-1 bg-white rounded-sm">
+            <div class="bar-bottom w-full h-1 bg-white rounded-sm cursor-pointer">
                 <div class="progress-bar h-1 bg-red-500 rounded-sm absolute top-0 left-0 "></div>
                 <div class="circle w-4 h-4 rounded-full bg-white relative bottom-2 left-0"></div>
             </div>
