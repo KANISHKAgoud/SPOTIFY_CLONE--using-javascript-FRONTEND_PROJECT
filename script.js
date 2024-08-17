@@ -12,7 +12,7 @@ async function getsongs()
         const element = anchor[index];
         if (element.href.endsWith("mp3"))
         {
-            songs.push(element.href.split("/songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", ""))
+            songs.push(element)
         }
     }
     return songs
@@ -28,32 +28,31 @@ async function playsongs(songs) {
         let element = allplaybuttons[index];
 
         element.addEventListener("click", () => {
-            // Check if the clicked button corresponds to the current song
             if (currentAudio && currentButton === element) {
-                // If the song is playing, pause it
                 if (!currentAudio.paused) {
                     currentAudio.pause();
                     element.querySelector("i").classList.remove("fa-pause");
                     element.querySelector("i").classList.add("fa-play");
 
-                    // Update the main play button's icon
                     let mainPlayButton = document.querySelector(".mainplay-button");
                     mainPlayButton.classList.remove("fa-circle-pause");
                     mainPlayButton.classList.add("fa-circle-play");
-                } else {
-                    // If the song is paused, play it
+                } 
+                else {
                     currentAudio.play();
                     element.querySelector("i").classList.remove("fa-play");
                     element.querySelector("i").classList.add("fa-pause");
 
-                    // Update the main play button's icon
                     let mainPlayButton = document.querySelector(".mainplay-button");
                     mainPlayButton.classList.remove("fa-circle-play");
                     mainPlayButton.classList.add("fa-circle-pause");
                 }
-            } else {
-                // Stop the currently playing song, if any
-                if (currentAudio && !currentAudio.paused) {
+
+            } 
+            
+            else {
+                if (currentAudio && !currentAudio.paused) 
+                    {
                     currentAudio.pause();
                     currentAudio.currentTime = 0;
 
@@ -64,20 +63,30 @@ async function playsongs(songs) {
                     }
                 }
 
-                // Play the new song
-                currentAudio = new Audio(songs[index]);
+                currentAudio = new Audio(songs[index].href || songs[index]);
+                let songName = extractSongName(songs[index]);
+                document.querySelector(".nameOf-song").textContent = songName;
+
+                currentAudio.addEventListener("loadedmetadata", () => {
+                    updateTimespan();
+                    resetProgressBar();
+                });
+
+                currentAudio.addEventListener("timeupdate", () => {
+                    updateTimespan();
+                    updateProgressBar();
+                });
+
                 currentAudio.play();
-                currentButton = element; // Update the currentButton reference
+                currentButton = element; 
 
                 element.querySelector("i").classList.remove("fa-play");
                 element.querySelector("i").classList.add("fa-pause");
 
-                // Update the main play button's icon
                 let mainPlayButton = document.querySelector(".mainplay-button");
                 mainPlayButton.classList.remove("fa-circle-play");
                 mainPlayButton.classList.add("fa-circle-pause");
             }
-            
         });
     }
 
@@ -94,7 +103,8 @@ async function playsongs(songs) {
                     currentButton.querySelector("i").classList.remove("fa-play");
                     currentButton.querySelector("i").classList.add("fa-pause");
                 }
-            } else {
+            } 
+            else {
                 currentAudio.pause();
                 mainPlayButton.classList.remove("fa-circle-pause");
                 mainPlayButton.classList.add("fa-circle-play");
@@ -106,7 +116,62 @@ async function playsongs(songs) {
             }
         }
     });
+
+    currentAudio.addEventListener("ended", () => {
+        resetProgressBar();  // Reset to the start when the song ends
+        const mainPlayButton = document.querySelector(".mainplay-button");
+        mainPlayButton.classList.remove("fa-circle-pause");
+        mainPlayButton.classList.add("fa-circle-play");
+    
+        if (currentButton) {
+            currentButton.querySelector("i").classList.remove("fa-pause");
+            currentButton.querySelector("i").classList.add("fa-play");
+        }
+    });
 }
+function updateProgressBar() {
+    const progressBar = document.querySelector(".progress-bar");
+    const circle = document.querySelector(".circle");
+    
+    // Calculate the percentage of the song played
+    const percentagePlayed = (currentAudio.currentTime / currentAudio.duration) * 100;
+
+    // Update the circle's position based on the percentage played
+    circle.style.left = `${percentagePlayed}%`;
+    progressBar.style.width = `${percentagePlayed}%`;
+}
+
+function resetProgressBar() {
+    const circle = document.querySelector(".circle");
+    const progressBar = document.querySelector(".progress-bar");
+    circle.style.left = "0%";  // Reset to start
+    progressBar.style.width = "0%";
+}
+
+function extractSongName(song) {
+    if (typeof song === "string") {
+        return song.split("/songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "")
+    } 
+    else if (typeof song.href === "string") {
+        return song.href.split("/songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3" , "")
+    }
+    return "Unknown Song";
+}
+
+function updateTimespan() {
+    const currentTime = formatTime(currentAudio.currentTime);
+    const duration = formatTime(currentAudio.duration);
+    document.querySelector(".timespan").textContent = `${currentTime} / ${duration}`;
+}
+
+function formatTime(seconds) {
+    if (isNaN(seconds)) return "0:00"; 
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+}
+
+
 
 
 
@@ -278,7 +343,7 @@ back_button_left.addEventListener("click", (element) => {
     for (let index = 0; index < photos_albums.length; index++) {
         const element = photos_albums[index];
         element.classList.remove("hidden");
-        element.classList.add("w-[19.1%]");
+        element.classList.add("w-[19%]");
     }
 
     let photos_invisible_albums = document.querySelectorAll(".photos-albums-invisible");
@@ -419,16 +484,21 @@ show_albums.addEventListener("click", (element) => {
 async function main() {
     let songs = await getsongs();
     console.log(songs)
+    await playsongs(songs)
+    let songs_name =[]
     let song_time = []
 
-    // for (let index = 0; index < songs.length; index++) {
-    //     const element = songs[index];
-    //         let duration = element.duration;
-    //         console.log(duration)
-    // }
-    // console.log(song_time)
+    for (let index = 0; index < songs.length; index++) {
+        const element = songs[index];
+        // let duration = element.duration;
+        // (duration)
+        songs_name.push (element.href.split("/songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", ""))
+    //     }
+    //     )
+    }
+    console.log(songs_name)
+    console.log(song_time)
     
-    await playsongs(songs)
     
 }
 main()
