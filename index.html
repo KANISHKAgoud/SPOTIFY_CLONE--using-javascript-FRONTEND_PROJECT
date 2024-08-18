@@ -12,7 +12,7 @@
 </head>
 
 <style>
-    @media only screen and (max-width: 754px)
+    @media only screen and (max-width: 999px)
     {
         .left-panel{
             position: absolute;
@@ -24,16 +24,9 @@
         }
     }
 
-    @media only screen and (max-width: 538px)
+    @media only screen and (max-width: 692px)
     {
         .photos-card-invisible-responsive{
-            display: none;
-        }
-    }
-
-    @media only screen and (max-width: 486px)
-    {
-        .photos-card-invisible-responsive2{
             display: none;
         }
 
@@ -42,8 +35,20 @@
             height: 28vh;
         }
     }
+
+    @media only screen and (max-width: 538px)
+    {
+        .photos-card-invisible-responsive{
+            display: none;
+        }
+
+        .photos-card-invisible-responsive2{
+            display: none;
+        }
+
+    }
     
-    @media only screen and (max-width: 312px)
+    @media only screen and (max-width: 435px)
     {
         .photos-card-invisible-responsive3{
             display: none;
@@ -156,7 +161,7 @@
                 <div class="">
 
                     <div id="containers-photos" class=" p-[0.7%] flex cursor-pointer w-[100%] overflow-x-auto flex-row">
-                        <div class="photos-cards relative xl:w-[20%] xl:h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group sm:w-[15%] sm:h-[30vh]">
+                        <div class="photos-cards relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
                             <img class="w-[100%] h-[75%] rounded-full" src="photos/Pritam.jpeg" alt="Pritam">
                             <div class="text-base text-white pt-[2%]">Pritam</div>
                             <div class="text-sm text-[#b3b3b3]">Artist</div>
@@ -165,7 +170,7 @@
                             </div>
                         </div>
 
-                        <div class="photos-cards relative xl:w-[20%] xl:h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group  sm:w-[15%] sm:h-[30vh]">
+                        <div class="photos-cards relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
                             <img class="w-[100%] h-[75%] rounded-full" src="photos/Arijit Singh.jpeg" alt="Arijit Singh">
                             <div class="text-base text-white pt-[2%] ">Arijit Singh</div>
                             <div class="text-sm text-[#b3b3b3]">Artist</div>
@@ -174,7 +179,7 @@
                             </div>
                         </div>
                     
-                        <div class="photos-cards photos-card-invisible-responsive3 relative xl:w-[20%] xl:h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group  sm:w-[15%] sm:h-[30vh]">
+                        <div class="photos-cards photos-card-invisible-responsive3 relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
                             <img class="w-[100%] h-[75%] rounded-full" src="photos/A.Rahman.jpeg" alt="A.R.Rahman">
                             <div class="text-base text-white pt-[2%] ">A.R.Rahman</div>
                             <div class="text-sm text-[#b3b3b3]">Artist</div>
@@ -183,7 +188,7 @@
                             </div>
                         </div>
                     
-                        <div class="photos-cards photos-card-invisible-responsive2 relative xl:w-[20%] xl:h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group  sm:w-[15%] sm:h-[30vh]">
+                        <div class="photos-cards photos-card-invisible-responsive2 relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
                             <img class="w-[100%] h-[75%] rounded-full" src="photos/Sachin-jigar.jpeg" alt="Sachin-jigar">
                             <div class="text-base text-white pt-[2%] ">Sachin-jigar</div>
                             <div class="text-sm text-[#b3b3b3]">Artist</div>
@@ -192,7 +197,7 @@
                             </div>
                         </div>
 
-                        <div class="photos-cards photos-card-invisible-responsive relative xl:w-[20%] xl:h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group  sm:w-[15%] sm:h-[30vh] ">
+                        <div class="photos-cards photos-card-invisible-responsive relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group ">
                             <img class="w-[100%] h-[75%] rounded-full" src="photos/Anirudh ravinchander.jpeg" alt="Anirudh Ravichander">
                             <div class="text-base text-white pt-[2%] ">Anirudh Ravichander</div>
                             <div class="text-sm text-[#b3b3b3]">Artist</div>
@@ -201,7 +206,7 @@
                             </div>
                         </div>   
                         <!-- NEW BOXES ADDED FROM HERE FOR THE PHOTOS CARD INVISIBLE -->
-                        <div id="photos-cards-invisible" class="photos-cards-invisible relative xl:w-[20%] xl:h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 sm:w-[15%] sm:h-[30vh] hidden">
+                        <div id="photos-cards-invisible" class="photos-cards-invisible relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden">
                             <img class="w-[100%] h-[75%] rounded-full" src="photos/Anirudh ravinchander.jpeg" alt="Anirudh Ravichander">
                             <div class="text-base text-white pt-[2%] ">Anirudh Ravichander</div>
                             <div class="text-sm text-[#b3b3b3]">Artist</div>
@@ -211,7 +216,7 @@
                         </div>   
                     
                     
-                        <div id="photos-cards-invisible" class="photos-cards-invisible relative xl:w-[20%] xl:h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden  sm:w-[15%] sm:h-[30vh]">
+                        <div id="photos-cards-invisible" class="photos-cards-invisible relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden ">
                             <img class="w-[100%] h-[75%] rounded-full" src="photos/Anirudh ravinchander.jpeg" alt="Anirudh Ravichander">
                             <div class="text-base text-white pt-[2%] ">Anirudh Ravichander</div>
                             <div class="text-sm text-[#b3b3b3]">Artist</div>
@@ -221,7 +226,7 @@
                         </div>   
                     
                     
-                        <div id="photos-cards-invisible" class="photos-cards-invisible relative xl:w-[20%] xl:h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden  sm:w-[15%] sm:h-[30vh]">
+                        <div id="photos-cards-invisible" class="photos-cards-invisible relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden">
                             <img class="w-[100%] h-[75%] rounded-full" src="photos/Anirudh ravinchander.jpeg" alt="Anirudh Ravichander">
                             <div class="text-base text-white pt-[2%] ">Anirudh Ravichander</div>
                             <div class="text-sm text-[#b3b3b3]">Artist</div>
@@ -231,7 +236,7 @@
                         </div>   
                     
                     
-                        <div id="photos-cards-invisible" class="photos-cards-invisible relative xl:w-[20%] xl:h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden  sm:w-[15%] sm:h-[30vh]">
+                        <div id="photos-cards-invisible" class="photos-cards-invisible relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden ">
                             <img class="w-[100%] h-[75%] rounded-full" src="photos/Anirudh ravinchander.jpeg" alt="Anirudh Ravichander">
                             <div class="text-base text-white pt-[2%] ">Anirudh Ravichander</div>
                             <div class="text-sm text-[#b3b3b3]">Artist</div>
@@ -241,7 +246,7 @@
                         </div>   
                     
                     
-                        <div id="photos-cards-invisible" class="photos-cards-invisible relative xl:w-[20%] xl:h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden  sm:w-[15%] sm:h-[30vh]">
+                        <div id="photos-cards-invisible" class="photos-cards-invisible relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden">
                             <img class="w-[100%] h-[75%] rounded-full" src="photos/Anirudh ravinchander.jpeg" alt="Anirudh Ravichander">
                             <div class="text-base text-white pt-[2%] ">Anirudh Ravichander</div>
                             <div class="text-sm text-[#b3b3b3]">Artist</div>
@@ -250,7 +255,7 @@
                             </div>
                         </div>  
                     
-                        <div id="photos-cards-invisible" class="photos-cards-invisible relative xl:w-[20%] xl:h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden  sm:w-[15%] sm:h-[30vh]">
+                        <div id="photos-cards-invisible" class="photos-cards-invisible relative w-[20%] h-[37vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group opacity-0 hidden ">
                             <img class="w-[100%] h-[75%] rounded-full" src="photos/Anirudh ravinchander.jpeg" alt="Anirudh Ravichander">
                             <div class="text-base text-white pt-[2%] ">Anirudh Ravichander</div>
                             <div class="text-sm text-[#b3b3b3]">Artist</div>

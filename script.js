@@ -18,6 +18,9 @@ async function getsongs()
     return songs
 }
 
+
+
+//PLAYING THE SONGS 
 let currentAudio = null;
 let currentButton = null; // Track the currently playing button
 
@@ -381,19 +384,27 @@ let show_photos= document.querySelector(".show-all-right-panel");
 show_photos.addEventListener("click", (element) => {
     let photos_container_artists = document.getElementById("containers-photos");
     photos_container_artists.classList.add("flex-wrap");
+
     let main_body_right_side= document.getElementById("main-content-right-panel");
     main_body_right_side.classList.add("overflow-y-hidden" ,"scrollable");
-    document.querySelector(".photos-card-invisible-responsive").classList.remove("hidden")
-    document.querySelector(".photos-card-invisible-responsive").classList.add("opacity-100")
-    document.querySelector(".photos-card-invisible-responsive2").classList.remove("hidden")
-    document.querySelector(".photos-card-invisible-responsive2").classList.add("opacity-100")
-    document.querySelector(".photos-card-invisible-responsive3").classList.remove("hidden")
-    document.querySelector(".photos-card-invisible-responsive3").classList.add("opacity-100")
+
     let photos_invisible_artists = document.querySelectorAll(".photos-cards-invisible");
     for (let index = 0; index < photos_invisible_artists.length; index++) {
         const element = photos_invisible_artists[index];
         element.classList.remove("hidden");
         element.classList.add("opacity-100");
+    }
+
+    if (window.matchMedia("(max-width: 692px)").matches) {
+        // Select the element(s) you want to show/hide at max-width: 692px
+        let photos_invisible_responsive1 = document.querySelector('.photos-card-invisible-responsive');
+
+        // Check if the element exists and is currently hidden
+        if (photos_invisible_responsive1 && photos_invisible_responsive1.style.display === "none") {
+            // Remove 'hidden' class and show the element
+            photos_invisible_responsive1.classList.remove('hidden');
+            photos_invisible_responsive1.style.display = "block"; // Ensure it becomes visible
+        }
     }
     
     //back button
@@ -482,6 +493,21 @@ show_albums.addEventListener("click", (element) => {
     home_button_left.classList.add("text-3xl")
 }
 );
+
+// Function to handle responsiveness on window resize (optional)
+function applyResponsiveClass() {
+    // Check if the screen width is <= 692px
+    if (window.matchMedia("(max-width: 692px)").matches) {
+        // Additional logic can be added here if needed
+    }
+}
+
+// Add resize event listener to keep things responsive
+window.addEventListener('resize', applyResponsiveClass);
+
+// Initial call to apply the responsive class on page load
+applyResponsiveClass();
+
 
 
 async function main() {
