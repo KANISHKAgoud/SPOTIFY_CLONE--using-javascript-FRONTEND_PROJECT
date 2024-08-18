@@ -395,6 +395,7 @@ show_photos.addEventListener("click", (element) => {
         element.classList.remove("hidden");
         element.classList.add("opacity-100");
     }
+    
     //back button
     let back_button_left = document.querySelector(".back-button")
     back_button_left.classList.add("font-extrabold")
