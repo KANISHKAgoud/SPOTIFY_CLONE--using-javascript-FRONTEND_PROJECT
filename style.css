@@ -614,6 +614,10 @@ video {
   top: 53%;
 }
 
+.right-\[15\%\] {
+  right: 15%;
+}
+
 .mx-\[4\%\] {
   margin-left: 4%;
   margin-right: 4%;
@@ -776,6 +780,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[40vh\] {
+  height: 40vh;
 }
 
 .w-1\/4 {

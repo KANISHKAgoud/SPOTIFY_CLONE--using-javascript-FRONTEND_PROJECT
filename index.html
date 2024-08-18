@@ -22,6 +22,11 @@
         .right-panel{
             width: 100%;
         }
+
+        .main-footer{
+            flex-wrap: wrap;
+            row-gap: 5vh;
+        }
     }
 
     @media only screen and (max-width: 692px)
@@ -34,12 +39,40 @@
             width: 60vh;
             height: 28vh;
         }
+
+        .photos-albums{
+            width: 25%;
+            height: 35vh;   
+        }
+
+        .photos-features{
+            width: 25%;
+            height: 35vh;
+        }
     }
 
     @media only screen and (max-width: 538px)
     {
         .photos-card-invisible-responsive2{
             display: none;
+        }
+
+        .photos-albums{
+            width: 33%;
+            height: 35vh;
+        }
+
+        .photos-features{
+            width: 33%;
+            height: 35vh;
+        }
+
+        .timespan{
+            right:10%
+        }
+
+        .nameOf-song{
+            left: 10%;
         }
 
     }
@@ -49,8 +82,28 @@
         .photos-card-invisible-responsive3{
             display: none;
         }
+
+        .photos-albums{
+            width: 49%;
+            height: 40vh;
+        }
+
+        .photos-features{
+            width:  49%;
+            height: 40vh;
+        }
     }
 
+    @media only screen and (max-width: 414px)
+    {
+        .timespan{
+            right:5%
+        }
+
+        .nameOf-song{
+            left: 5%;
+        }
+    }
 
 
 
@@ -317,13 +370,13 @@
                         <div class="photos-albums relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[5px]">
                             <img class="w-[100%] h-[75%] " src="photos/Albums_2.jpeg" alt="Aashiqui 2">
                             <div class="text-base text-white pt-[2%] ">Aashiqui 2</div>
-                            <div class="text-sm text-[#b3b3b3]">Mithoon, Ankit Tiwari , Jeet Gannguli</div>
+                            <div class="text-sm text-[#b3b3b3] truncate max-w-full">Mithoon, Ankit Tiwari , Jeet Gannguli</div>
                             <div class="playbutton w-14 h-14 bg-[#1abc54] top-[53%] left-[60%] rounded-[100%] flex items-center justify-center absolute opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                                 <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
                             </div>
                         </div>  
 
-                        <div class="photos-albums relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[0px]">
+                        <div class="photos-albums photos-card-invisible-responsive3 relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[0px]">
                             <img class="w-[100%] h-[75%] " src="photos/Albums_3.jpeg" alt="Ek tha raja">
                             <div class="text-base text-white pt-[2%] ">Ek tha raja</div>
                             <div class="text-sm text-[#b3b3b3]">Badshah</div>
@@ -331,19 +384,19 @@
                                 <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
                             </div>
                         </div>  
-                        <div class="photos-albums relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[5px]">
+                        <div class="photos-albums photos-card-invisible-responsive2 relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[5px]">
                             <img class="w-[100%] h-[75%] " src="photos/Albums_4.jpeg" alt="Animal">
                             <div class="text-base text-white pt-[2%] ">Animal</div>
-                            <div class="text-sm text-[#b3b3b3]">Manan Bhardwaj, Vishal Mishra ,Jaani</div>
+                            <div class="text-sm text-[#b3b3b3] truncate max-w-full">Manan Bhardwaj, Vishal Mishra ,Jaani</div>
                             <div class="playbutton w-14 h-14 bg-[#1abc54] top-[53%] left-[60%] rounded-[100%] flex items-center justify-center absolute opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                                 <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
                             </div>
                         </div>  
 
-                        <div class="photos-albums relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[12px]">
+                        <div class="photos-albums photos-card-invisible-responsive relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group transform translate-y-[12px]">
                             <img class="w-[100%] h-[75%] " src="photos/Albums_5.jpeg" alt="Sajni">
                             <div class="text-base text-white pt-[2%] ">Sajni[From-"Laapataa ladies"]</div>
-                            <div class="text-sm text-[#b3b3b3]">Ram Sampath,Arijit Singh,Prashant Pandey</div>
+                            <div class="text-sm text-[#b3b3b3] truncate max-w-full">Ram Sampath,Arijit Singh,Prashant Pandey</div>
                             <div class="playbutton w-14 h-14 bg-[#1abc54] top-[53%] left-[60%] rounded-[100%] flex items-center justify-center absolute opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                                 <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
                             </div>
@@ -423,7 +476,7 @@
                                 </div>
                             </div>  
 
-                            <div class="photos-features relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
+                            <div class="photos-features photos-card-invisible-responsive3 relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group">
                                 <img class="w-[100%] h-[75%] " src="photos/featured-chart-3.jpg" alt="Top 50- Global">
                                 <div class="text-base text-white pt-[2%] ">Top 50- Global</div>
                                 <div class="text-sm text-[#b3b3b3] truncate max-w-full">Your daily update of the most played tracks right now - Global</div>
@@ -431,7 +484,7 @@
                                     <button class="text-black text-xl"><i class="fa-solid fa-play"></i></button>
                                 </div>
                             </div>  
-                            <div class="photos-features relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group ">
+                            <div class="photos-features photos-card-invisible-responsive2 relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group ">
                                 <img class="w-[100%] h-[75%] " src="photos/featured-chart-4.jpg" alt="Top 50 - USA">
                                 <div class="text-base text-white pt-[2%] ">Top 50 - USA</div>
                                 <div class="text-sm text-[#b3b3b3] truncate max-w-full">Your daily update of the most played tracks right now - USA</div>
@@ -440,7 +493,7 @@
                                 </div>
                             </div>  
 
-                            <div class="photos-features relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group ">
+                            <div class="photos-features photos-card-invisible-responsive relative w-[20%] h-[38vh] rounded-lg p-[1.4%] flex flex-col  justify-center gap-y-[0.6%] group ">
                                 <img class="w-[100%] h-[75%] " src="photos/featured-chart-5.jpg" alt="Viral 50 -Global">
                                 <div class="text-base text-white pt-[2%] ">Viral 50 -Global</div>
                                 <div class="text-sm text-[#b3b3b3] truncate max-w-full">Your daily update of the most played tracks right now - Global</div>
@@ -453,7 +506,7 @@
 
 
                 <footer class="text-[#b3b3b3] ">
-                    <div class="flex text-base px-[4%] py-[8%] gap-x-[9%]">
+                    <div class="main-footer flex text-base px-[4%] py-[8%] gap-x-[9%]">
 
                         <div class="">
                             <ul class="">
@@ -488,7 +541,7 @@
                                 <li>Student</li>
                             </ul>
                         </div>
-                        <div class="">
+                        <div class="icons-footer">
                             <ul class="flex gap-x-10">
                                 <li><i class="fa-brands fa-instagram text-white"></i></li>
                                 <li><i class="fa-brands fa-twitter text-white"></i></li>

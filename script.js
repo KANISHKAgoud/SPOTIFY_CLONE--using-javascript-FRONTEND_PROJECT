@@ -358,13 +358,24 @@ back_button_left.addEventListener("click", (element) => {
         let photos_invisible_responsive2 = document.querySelector('.photos-card-invisible-responsive2');
         photos_invisible_responsive2.classList.add('hidden');
 
+        let photos_cards = document.querySelectorAll(".photos-cards");
+        for (let index = 0; index < photos_cards.length; index++) {
+            let card = photos_cards[index];
+            card.style.width = '32%';
+            card.style.height = '38vh';
+        }
+
+    }
+
+    if (window.matchMedia("(max-width: 426px)").matches) {
+
         let photos_invisible_responsive3 = document.querySelector('.photos-card-invisible-responsive3');
         photos_invisible_responsive3.classList.add('hidden');
 
         let photos_cards = document.querySelectorAll(".photos-cards");
         for (let index = 0; index < photos_cards.length; index++) {
             let card = photos_cards[index];
-            card.style.width = '35%';
+            card.style.width = '44%';
             card.style.height = '38vh';
         }
 
@@ -455,27 +466,27 @@ show_photos.addEventListener("click", (element) => {
         }
     }
 
-    // if (window.matchMedia("(max-width: 616px)").matches) {
-    //     let photos_invisible_responsive1 = document.querySelector('.photos-card-invisible-responsive');
+    if (window.matchMedia("(max-width: 616px)").matches) {
+        let photos_invisible_responsive1 = document.querySelector('.photos-card-invisible-responsive');
 
-    //     photos_invisible_responsive1.style.width = '32%';
-    //     photos_invisible_responsive1.style.height = '37vh';
+        photos_invisible_responsive1.style.width = '32%';
+        photos_invisible_responsive1.style.height = '37vh';
 
-    //     let photos_cards = document.querySelectorAll(".photos-cards");
-    //     for (let index = 0; index < photos_cards.length; index++) {
-    //         let card = photos_cards[index];
-    //         card.style.width = '32%';
-    //         card.style.height = '37vh';
-    //     }
+        let photos_cards = document.querySelectorAll(".photos-cards");
+        for (let index = 0; index < photos_cards.length; index++) {
+            let card = photos_cards[index];
+            card.style.width = '32%';
+            card.style.height = '37vh';
+        }
         
-    //     let photos_invisible_artists = document.querySelectorAll(".photos-cards-invisible");
-    //     for (let index = 0; index < photos_invisible_artists.length; index++) {
-    //         const element = photos_invisible_artists[index];
-    //         element.style.width = '32%';
-    //         element.style.height = '37vh';
+        let photos_invisible_artists = document.querySelectorAll(".photos-cards-invisible");
+        for (let index = 0; index < photos_invisible_artists.length; index++) {
+            const element = photos_invisible_artists[index];
+            element.style.width = '32%';
+            element.style.height = '37vh';
             
-    //     }
-    // }
+        }
+    }
 
     if (window.matchMedia("(max-width: 497px)").matches) {
         let photos_invisible_responsive1 = document.querySelector('.photos-card-invisible-responsive');
@@ -556,6 +567,8 @@ function applyResponsiveClass() {
         }
     }
 
+
+
     if (window.matchMedia("(max-width: 497px)").matches) {
         console.log("Applying changes for 497px");
 
@@ -579,42 +592,15 @@ function applyResponsiveClass() {
             console.log("Could not find .photos-card-invisible-responsive3");
         }
     }
-
-
-//     if (window.matchMedia("(max-width: 497px)").matches) {
-//         let photos_invisible_responsive2 = document.querySelector('.photos-card-invisible-responsive2');
-//         let photos_invisible_responsive3 = document.querySelector('.photos-card-invisible-responsive3');
-
-//         if (photos_invisible_responsive2) {
-//             photos_invisible_responsive2.classList.remove('hidden');
-//             photos_invisible_responsive2.style.display = 'block';
-//         }
-
-//         if (photos_invisible_responsive3) {
-//             photos_invisible_responsive3.classList.remove('hidden');
-//             photos_invisible_responsive3.style.display = 'block';
-//         }
-
-//         photos_invisible_responsive3.style.width = '40%';
-//         photos_invisible_responsive3.style.height = '34vh';
-
-//         photos_invisible_responsive2.style.width = '40%';
-//         photos_invisible_responsive2.style.height = '34vh';
-
-//         // let photos_invisible_artists = document.querySelectorAll(".photos-cards-invisible");
-//         // let photos_cards = document.querySelectorAll(".photos-cards");
-//         // for (let index = 0; index < photos_cards.length; index++) {
-//         //     let card = photos_cards[index];
-//         //     let invisible_cards= photos_invisible_artists [index];
-//         //     card.style.width = '30%';
-//         //     card.style.height = '37vh';
-//         //     invisible_cards.style.width = '30%';
-//         //     invisible_cards.style.height = '37vh';
-//         // }
-//     }
 }
 window.addEventListener('resize', applyResponsiveClass);
 applyResponsiveClass();
+
+function applyResponsiveClass() {
+    if (window.matchMedia("(max-width: 692px)").matches) {
+       
+    }
+}
 
 
 
@@ -650,9 +636,6 @@ show_albums.addEventListener("click", (element) => {
     let main_body_right_side_1strow= document.querySelector(".content-right-1strow");
     main_body_right_side_1strow.classList.add("hidden");
 
-    // let main_body_right_side_2ndrow= document.querySelector(".container2-albums");
-    // main_body_right_side_2ndrow.classList.remove("hidden");
-
     let main_body_right_side_3rdrow= document.querySelector(".Feature-title");
     main_body_right_side_3rdrow.classList.add("hidden");
 
@@ -667,16 +650,35 @@ show_albums.addEventListener("click", (element) => {
     home_button_left.classList.add("font-extrabold")
     home_button_left.classList.add( "text-white")
     home_button_left.classList.add("text-3xl")
+
+    //responsive
+    // if (window.matchMedia("(max-width: 497px)").matches) {
+    //     let photos_albums = document.querySelectorAll(".photos-albums"); 
+
+        
+    //     for (let index = 0; index < photos_albums.length; index++) {
+    //         const element = photos_albums[index];
+    //         element.classList.style.width = "15%";
+    //         element.classList.style.height = "28vh";
+    //     }
+
+    //     let photos_invisible_albums = document.querySelectorAll(".photos-albums-invisible");
+    //     for (let index = 0; index < photos_invisible_albums.length; index++) {
+    //         const element = photos_invisible_albums[index];
+    //         element.classList.style.width = "15%";
+    //         element.classList.style.height = "28vh";
+    //     }
+    // }
 }
 );
 
-// Function to handle responsiveness on window resize (optional)
-function applyResponsiveClass() {
-    // Check if the screen width is <= 692px
-    if (window.matchMedia("(max-width: 692px)").matches) {
-        // Additional logic can be added here if needed
-    }
-}
+// function applyResponsiveAlbums() {
+//     if (window.matchMedia("(max-width: 497px)").matches) {
+
+//     }
+// }
+// window.addEventListener('resize', applyResponsiveAlbums);
+// applyResponsiveAlbums();
 
 
 
