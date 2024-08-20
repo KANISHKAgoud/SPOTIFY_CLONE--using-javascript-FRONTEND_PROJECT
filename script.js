@@ -336,10 +336,19 @@ back_button_left.addEventListener("click", (element) => {
     }
 
     //responsive for the artists photos
-    if (window.matchMedia("(max-width: 692px)").matches) {
+    let photos_invisible_responsive1 = document.querySelector('.photos-card-invisible-responsive');
+    let photos_invisible_responsive2 = document.querySelector('.photos-card-invisible-responsive2');
+    let photos_invisible_responsive3 = document.querySelector('.photos-card-invisible-responsive3');
 
-        let photos_invisible_responsive1 = document.querySelector('.photos-card-invisible-responsive');
-        photos_invisible_responsive1.classList.add('hidden');
+    let photos_albums_invisible_responsive1 = document.querySelector(".albums1-responsive")
+    let photos_albums_invisible_responsive2 = document.querySelector(".albums2-responsive")
+    let photos_albums_invisible_responsive3 = document.querySelector(".albums3-responsive")
+    
+    if (window.matchMedia("(max-width: 1085px)").matches) {
+        if (photos_invisible_responsive1) {
+            photos_invisible_responsive1.classList.add('hidden');
+            photos_invisible_responsive1.style.display = '';
+        }
 
         let photos_cards = document.querySelectorAll(".photos-cards");
         for (let index = 0; index < photos_cards.length; index++) {
@@ -348,38 +357,60 @@ back_button_left.addEventListener("click", (element) => {
             card.style.height = '28vh';
         }
 
+        if (photos_albums_invisible_responsive1) {
+            photos_albums_invisible_responsive1.classList.add('hidden');
+            photos_albums_invisible_responsive1.style.display = '';
+        }
     }
 
-    if (window.matchMedia("(max-width: 497px)").matches) {
+    if (window.matchMedia("(max-width: 743px)").matches) {
+        if (photos_invisible_responsive1) {
+            photos_invisible_responsive1.classList.add('hidden');
+            photos_invisible_responsive1.style.display = '';
+        }
 
-        let photos_invisible_responsive1 = document.querySelector('.photos-card-invisible-responsive');
-        photos_invisible_responsive1.classList.add('hidden');
-
-        let photos_invisible_responsive2 = document.querySelector('.photos-card-invisible-responsive2');
-        photos_invisible_responsive2.classList.add('hidden');
+        if (photos_invisible_responsive2) {
+            photos_invisible_responsive2.classList.add('hidden');
+            photos_invisible_responsive2.style.display = '';
+        }
 
         let photos_cards = document.querySelectorAll(".photos-cards");
         for (let index = 0; index < photos_cards.length; index++) {
             let card = photos_cards[index];
             card.style.width = '32%';
-            card.style.height = '38vh';
+            card.style.height = '28vh';
+        }
+
+        if (photos_albums_invisible_responsive2) {
+            photos_albums_invisible_responsive2.classList.add('hidden');
+            photos_albums_invisible_responsive2.style.display = '';
         }
 
     }
 
-    if (window.matchMedia("(max-width: 426px)").matches) {
+    // if (window.matchMedia("(max-width: 497px)").matches) {
 
-        let photos_invisible_responsive3 = document.querySelector('.photos-card-invisible-responsive3');
-        photos_invisible_responsive3.classList.add('hidden');
+    // }
+
+    if (window.matchMedia("(max-width: 610px)").matches) {
+        if (photos_invisible_responsive3) {
+            photos_invisible_responsive3.classList.add('hidden');
+            photos_invisible_responsive3.style.display = '';
+        }
 
         let photos_cards = document.querySelectorAll(".photos-cards");
         for (let index = 0; index < photos_cards.length; index++) {
             let card = photos_cards[index];
-            card.style.width = '44%';
-            card.style.height = '38vh';
+            card.style.width = '48%';
+            card.style.height = '30vh';
         }
 
-    }
+        if (photos_albums_invisible_responsive3) {
+            photos_albums_invisible_responsive3.classList.add('hidden');
+            photos_albums_invisible_responsive3.style.display = '';
+        
+        }
+    } 
 
 
     //2nd row
@@ -428,6 +459,10 @@ back_button_left.addEventListener("click", (element) => {
 // FIRST PHOTOS INVISIBLE
 let show_photos= document.querySelector(".show-all-right-panel");
 show_photos.addEventListener("click", (element) => {
+    let photos_invisible_responsive1 = document.querySelector('.photos-card-invisible-responsive');
+    let photos_invisible_responsive2 = document.querySelector('.photos-card-invisible-responsive2');
+    let photos_invisible_responsive3 = document.querySelector('.photos-card-invisible-responsive3');
+
     let photos_container_artists = document.getElementById("containers-photos");
     photos_container_artists.classList.add("flex-wrap");
 
@@ -442,13 +477,13 @@ show_photos.addEventListener("click", (element) => {
     }
 
     //responsive
-    if (window.matchMedia("(max-width: 692px)").matches) {
-        let photos_invisible_responsive1 = document.querySelector('.photos-card-invisible-responsive');
-
-        photos_invisible_responsive1.classList.remove('hidden');
- 
-        photos_invisible_responsive1.style.width = '30%';
-        photos_invisible_responsive1.style.height = '37vh';
+    if (window.matchMedia("(max-width: 1085px)").matches) {
+        if (photos_invisible_responsive1) {
+            photos_invisible_responsive1.classList.remove('hidden');
+            photos_invisible_responsive1.style.display = 'block';
+            photos_invisible_responsive1.style.width = '30%';
+            photos_invisible_responsive1.style.height = '37vh';
+        }
 
         let photos_cards = document.querySelectorAll(".photos-cards");
         for (let index = 0; index < photos_cards.length; index++) {
@@ -456,57 +491,65 @@ show_photos.addEventListener("click", (element) => {
             card.style.width = '30%';
             card.style.height = '37vh';
         }
-        
-        let photos_invisible_artists = document.querySelectorAll(".photos-cards-invisible");
+
         for (let index = 0; index < photos_invisible_artists.length; index++) {
             const element = photos_invisible_artists[index];
             element.style.width = '30%';
             element.style.height = '37vh';
-            
         }
     }
 
-    if (window.matchMedia("(max-width: 616px)").matches) {
-        let photos_invisible_responsive1 = document.querySelector('.photos-card-invisible-responsive');
-
-        photos_invisible_responsive1.style.width = '32%';
-        photos_invisible_responsive1.style.height = '37vh';
+    if (window.matchMedia("(max-width: 743px)").matches) {
+        if (photos_invisible_responsive1) {
+            photos_invisible_responsive1.style.width = '32%';
+            photos_invisible_responsive1.style.height = '30vh';
+        }
 
         let photos_cards = document.querySelectorAll(".photos-cards");
         for (let index = 0; index < photos_cards.length; index++) {
             let card = photos_cards[index];
             card.style.width = '32%';
-            card.style.height = '37vh';
+            card.style.height = '30vh';
         }
-        
-        let photos_invisible_artists = document.querySelectorAll(".photos-cards-invisible");
+
         for (let index = 0; index < photos_invisible_artists.length; index++) {
             const element = photos_invisible_artists[index];
             element.style.width = '32%';
-            element.style.height = '37vh';
-            
+            element.style.height = '30vh';
+        }
+
+        if (photos_invisible_responsive2) {
+            photos_invisible_responsive2.classList.remove('hidden');
+            photos_invisible_responsive2.style.display = 'block';
+            photos_invisible_responsive2.style.width = '32%';
+            photos_invisible_responsive2.style.height = '30vh';
         }
     }
 
-    if (window.matchMedia("(max-width: 497px)").matches) {
-        let photos_invisible_responsive1 = document.querySelector('.photos-card-invisible-responsive');
-
-        photos_invisible_responsive1.style.width = '40%';
-        photos_invisible_responsive1.style.height = '34vh';
+    if (window.matchMedia("(max-width: 610px)").matches) {
+        if (photos_invisible_responsive1) {
+            photos_invisible_responsive1.style.width = '46%';
+            photos_invisible_responsive1.style.height = '30vh';
+        }
 
         let photos_cards = document.querySelectorAll(".photos-cards");
         for (let index = 0; index < photos_cards.length; index++) {
             let card = photos_cards[index];
-            card.style.width = '40%';
-            card.style.height = '34vh';
+            card.style.width = '46%';
+            card.style.height = '30vh';
         }
-        
-        let photos_invisible_artists = document.querySelectorAll(".photos-cards-invisible");
+
         for (let index = 0; index < photos_invisible_artists.length; index++) {
             const element = photos_invisible_artists[index];
-            element.style.width = '40%';
-            element.style.height = '37vh';
-            
+            element.style.width = '46%';
+            element.style.height = '30vh';
+        }
+
+        if (photos_invisible_responsive3) {
+            photos_invisible_responsive3.classList.remove('hidden');
+            photos_invisible_responsive3.style.display = 'block';
+            photos_invisible_responsive3.style.width = '46%';
+            photos_invisible_responsive3.style.height = '30vh';
         }
     }
     
@@ -544,63 +587,6 @@ show_photos.addEventListener("click", (element) => {
 
 }
 );
-
-function applyResponsiveClass() {
-    let photos_invisible_responsive1 = document.querySelector('.photos-card-invisible-responsive');
-    let photos_invisible_responsive2 = document.querySelector('.photos-card-invisible-responsive2');
-    let photos_invisible_responsive3 = document.querySelector('.photos-card-invisible-responsive3');
-
-    if (window.matchMedia("(max-width: 692px)").matches) {
-        let photos_invisible_responsive1 = document.querySelector('.photos-card-invisible-responsive');
-        photos_invisible_responsive1.style.width = '30%';
-        photos_invisible_responsive1.style.height = '37vh';
-
-        let photos_invisible_artists = document.querySelectorAll(".photos-cards-invisible");
-        let photos_cards = document.querySelectorAll(".photos-cards");
-        for (let index = 0; index < photos_cards.length; index++) {
-            let card = photos_cards[index];
-            let invisible_cards= photos_invisible_artists [index];
-            card.style.width = '30%';
-            card.style.height = '37vh';
-            invisible_cards.style.width = '30%';
-            invisible_cards.style.height = '37vh';
-        }
-    }
-
-
-
-    if (window.matchMedia("(max-width: 497px)").matches) {
-        console.log("Applying changes for 497px");
-
-        if (photos_invisible_responsive2) {
-            console.log("Found .photos-card-invisible-responsive2");
-            photos_invisible_responsive2.classList.remove('hidden');
-            photos_invisible_responsive2.style.display = 'block';
-            photos_invisible_responsive2.style.width = '40%';
-            photos_invisible_responsive2.style.height = '34vh';
-        } else {
-            console.log("Could not find .photos-card-invisible-responsive2");
-        }
-
-        if (photos_invisible_responsive3) {
-            console.log("Found .photos-card-invisible-responsive3");
-            photos_invisible_responsive3.classList.remove('hidden');
-            photos_invisible_responsive3.style.display = 'block';
-            photos_invisible_responsive3.style.width = '40%';
-            photos_invisible_responsive3.style.height = '34vh';
-        } else {
-            console.log("Could not find .photos-card-invisible-responsive3");
-        }
-    }
-}
-window.addEventListener('resize', applyResponsiveClass);
-applyResponsiveClass();
-
-function applyResponsiveClass() {
-    if (window.matchMedia("(max-width: 692px)").matches) {
-       
-    }
-}
 
 
 
@@ -652,33 +638,48 @@ show_albums.addEventListener("click", (element) => {
     home_button_left.classList.add("text-3xl")
 
     //responsive
-    // if (window.matchMedia("(max-width: 497px)").matches) {
-    //     let photos_albums = document.querySelectorAll(".photos-albums"); 
+    let photos_albums_invisible_responsive1 = document.querySelector(".albums1-responsive")
+    let photos_albums_invisible_responsive2 = document.querySelector(".albums2-responsive")
+    let photos_albums_invisible_responsive3 = document.querySelector(".albums3-responsive")
 
+    if (window.matchMedia("(max-width: 1085px)").matches) {
+        if (photos_albums_invisible_responsive1) {
+            photos_albums_invisible_responsive1.classList.remove('hidden');
+            photos_albums_invisible_responsive1.style.display = 'block';
+        }
+    }
+
+    if (window.matchMedia("(max-width: 743px)").matches) {
+        let photos_invisible_albums = document.querySelectorAll(".photos-albums-invisible");
+        for (let index = 0; index < photos_invisible_albums.length; index++) {
+            const element = photos_invisible_albums[index];
+            element.classList.remove("hidden");
+            element.classList.add("w-[33%]");
+        }
+
+        if (photos_albums_invisible_responsive2) {
+            photos_albums_invisible_responsive2.classList.remove('hidden');
+            photos_albums_invisible_responsive2.style.display = 'block';
+            photos_albums_invisible_responsive2.classList.add('w-33%');
+        }
+    }
+
+    if (window.matchMedia("(max-width: 610px)").matches) {
+        let photos_invisible_albums = document.querySelectorAll(".photos-albums-invisible");
+        for (let index = 0; index < photos_invisible_albums.length; index++) {
+            const element = photos_invisible_albums[index];
+            element.classList.remove("hidden");
+            element.classList.add("w-[50%]");
+        }
+
+        if (photos_albums_invisible_responsive3) {
+            photos_albums_invisible_responsive3.classList.remove('hidden');
+            photos_albums_invisible_responsive3.style.display = 'block';
         
-    //     for (let index = 0; index < photos_albums.length; index++) {
-    //         const element = photos_albums[index];
-    //         element.classList.style.width = "15%";
-    //         element.classList.style.height = "28vh";
-    //     }
-
-    //     let photos_invisible_albums = document.querySelectorAll(".photos-albums-invisible");
-    //     for (let index = 0; index < photos_invisible_albums.length; index++) {
-    //         const element = photos_invisible_albums[index];
-    //         element.classList.style.width = "15%";
-    //         element.classList.style.height = "28vh";
-    //     }
-    // }
+        }
+    }
 }
 );
-
-// function applyResponsiveAlbums() {
-//     if (window.matchMedia("(max-width: 497px)").matches) {
-
-//     }
-// }
-// window.addEventListener('resize', applyResponsiveAlbums);
-// applyResponsiveAlbums();
 
 
 
@@ -691,11 +692,8 @@ async function main() {
 
     for (let index = 0; index < songs.length; index++) {
         const element = songs[index];
-        // let duration = element.duration;
-        // (duration)
         songs_name.push (element.href.split("/songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", ""))
-    //     }
-    //     )
+
     }
     console.log(songs_name)
     console.log(song_time)
