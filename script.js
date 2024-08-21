@@ -344,7 +344,7 @@ back_button_left.addEventListener("click", (element) => {
     let photos_albums_invisible_responsive2 = document.querySelector(".albums2-responsive")
     let photos_albums_invisible_responsive3 = document.querySelector(".albums3-responsive")
     
-    if (window.matchMedia("(max-width: 1085px)").matches) {
+    if (window.matchMedia("(max-width: 1226px)").matches) {
         if (photos_invisible_responsive1) {
             photos_invisible_responsive1.classList.add('hidden');
             photos_invisible_responsive1.style.display = '';
@@ -388,10 +388,6 @@ back_button_left.addEventListener("click", (element) => {
 
     }
 
-    // if (window.matchMedia("(max-width: 497px)").matches) {
-
-    // }
-
     if (window.matchMedia("(max-width: 610px)").matches) {
         if (photos_invisible_responsive3) {
             photos_invisible_responsive3.classList.add('hidden');
@@ -419,7 +415,7 @@ back_button_left.addEventListener("click", (element) => {
     for (let index = 0; index < photos_albums.length; index++) {
         const element = photos_albums[index];
         element.classList.remove("hidden");
-        element.classList.add("w-[19%]");
+        element.classList.add("w-[17.8%]");
     }
 
     let photos_invisible_albums = document.querySelectorAll(".photos-albums-invisible");
@@ -477,7 +473,7 @@ show_photos.addEventListener("click", (element) => {
     }
 
     //responsive
-    if (window.matchMedia("(max-width: 1085px)").matches) {
+    if (window.matchMedia("(max-width: 1226px)").matches) {
         if (photos_invisible_responsive1) {
             photos_invisible_responsive1.classList.remove('hidden');
             photos_invisible_responsive1.style.display = 'block';
@@ -642,7 +638,7 @@ show_albums.addEventListener("click", (element) => {
     let photos_albums_invisible_responsive2 = document.querySelector(".albums2-responsive")
     let photos_albums_invisible_responsive3 = document.querySelector(".albums3-responsive")
 
-    if (window.matchMedia("(max-width: 1085px)").matches) {
+    if (window.matchMedia("(max-width: 1226px)").matches) {
         if (photos_albums_invisible_responsive1) {
             photos_albums_invisible_responsive1.classList.remove('hidden');
             photos_albums_invisible_responsive1.style.display = 'block';
