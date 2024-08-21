@@ -654,6 +654,10 @@ video {
   margin-bottom: 8%;
 }
 
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
 .ml-\[4\%\] {
   margin-left: 4%;
 }

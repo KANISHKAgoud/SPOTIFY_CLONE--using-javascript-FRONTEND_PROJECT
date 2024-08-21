@@ -451,6 +451,17 @@ back_button_left.addEventListener("click", (element) => {
 }
 )
 
+//HAMBURGER BUTTON
+let hamburger = document.querySelector('.responsive-hamburger')
+if (window.matchMedia("(max-width: 1206px)").matches) {
+    if (hamburger) {
+        hamburger.classList.remove("hidden");
+    }
+} else {
+    if (hamburger) {
+        hamburger.classList.add("hidden");
+    }
+}
 
 // FIRST PHOTOS INVISIBLE
 let show_photos= document.querySelector(".show-all-right-panel");
