@@ -2,7 +2,7 @@ console.log("java script starts from here!!")
 
 async function getsongs()
 {
-    let f = await fetch("http://127.0.0.1:5500/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/songs/");
+    let f = await fetch("http://127.0.0.1:3000/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/songs/");
     let response = await f.text();
     let div= document.createElement("div")   
     div.innerHTML = response
@@ -149,10 +149,10 @@ function resetProgressBar() {
 
 function extractSongName(song) {
     if (typeof song === "string") {
-        return song.split("/songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "")
+        return song.split("/songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3" , "").replaceAll("-(Pagal-World.Com.In)", "").replaceAll("-(PagalSongs.Com.IN)", "").replaceAll(`-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm)`, "").replaceAll(`(PaglaWorld.com.cm)`, "")
     } 
     else if (typeof song.href === "string") {
-        return song.href.split("/songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3" , "")
+        return song.href.split("/songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3" , "").replaceAll("(Pagal-World.Com.In)", "").replaceAll("-(PagalSongs.Com.IN)", "").replaceAll(`-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm)`, "").replaceAll(`(PaglaWorld.com.cm)`, "")
     }
     return "Unknown Song";
 }
@@ -415,7 +415,7 @@ back_button_left.addEventListener("click", (element) => {
     for (let index = 0; index < photos_albums.length; index++) {
         const element = photos_albums[index];
         element.classList.remove("hidden");
-        element.classList.add("w-[17.8%]");
+        element.classList.add("w-[17.5%]");
     }
 
     let photos_invisible_albums = document.querySelectorAll(".photos-albums-invisible");
@@ -452,16 +452,15 @@ back_button_left.addEventListener("click", (element) => {
 )
 
 //HAMBURGER BUTTON
-let hamburger = document.querySelector('.responsive-hamburger')
-if (window.matchMedia("(max-width: 1206px)").matches) {
-    if (hamburger) {
-        hamburger.classList.remove("hidden");
-    }
-} else {
-    if (hamburger) {
-        hamburger.classList.add("hidden");
-    }
-}
+
+
+// let hamburger = document.querySelector('.responsive-hamburger')
+// if (window.matchMedia("(max-width: 1322px)").matches) {
+//     if (hamburger) {
+//         hamburger.classList.remove("hidden");
+//         hamburger.style.display = 'block';
+//     }
+// } 
 
 // FIRST PHOTOS INVISIBLE
 let show_photos= document.querySelector(".show-all-right-panel");
