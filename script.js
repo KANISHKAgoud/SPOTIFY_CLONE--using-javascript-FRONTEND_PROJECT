@@ -92,7 +92,7 @@ async function playsongs(songs) {
                 mainPlayButton.classList.add("fa-circle-pause");
             }
         });
-        
+
         element.addEventListener("touchstart", () => {
             
             if (currentAudio && currentButton === element) {
@@ -184,7 +184,40 @@ async function playsongs(songs) {
         }
     });
 
+    mainPlayButton.addEventListener("touchstart", () => {
+        if (currentAudio) {
+            if (currentAudio.paused) {
+                currentAudio.play();
+                mainPlayButton.classList.remove("fa-circle-play");
+                mainPlayButton.classList.add("fa-circle-pause");
+
+                if (currentButton) {
+                    currentButton.querySelector("i").classList.remove("fa-play");
+                    currentButton.querySelector("i").classList.add("fa-pause");
+                }
+            } 
+            else {
+                currentAudio.pause();
+                mainPlayButton.classList.remove("fa-circle-pause");
+                mainPlayButton.classList.add("fa-circle-play");
+
+                if (currentButton) {
+                    currentButton.querySelector("i").classList.remove("fa-pause");
+                    currentButton.querySelector("i").classList.add("fa-play");
+                }
+            }
+        }
+    });
+
     document.querySelector(".bar-bottom").addEventListener("click", (e) => {
+        let pointer = (e.offsetX/e.target.getBoundingClientRect().width)*100
+        document.querySelector(".circle").style.left = `${pointer}%`;
+        document.querySelector(".progress-bar").style.width = `${pointer}%`
+        currentAudio.currentTime = ((currentAudio.duration)*pointer)/100
+    }
+    )
+
+    document.querySelector(".bar-bottom").addEventListener("touchstart", (e) => {
         let pointer = (e.offsetX/e.target.getBoundingClientRect().width)*100
         document.querySelector(".circle").style.left = `${pointer}%`;
         document.querySelector(".progress-bar").style.width = `${pointer}%`
