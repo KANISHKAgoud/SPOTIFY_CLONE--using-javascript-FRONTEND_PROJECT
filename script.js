@@ -33,7 +33,7 @@ async function playsongs(songs) {
         element.addEventListener("click", () => playSong(index));
         element.addEventListener("touchstart", () => playSong(index));
 
-            function playSong(index) { 
+        function playSong(index) {
             if (currentAudio && currentButton === element) {
                 if (!currentAudio.paused) {
                     currentAudio.pause();
@@ -43,8 +43,7 @@ async function playsongs(songs) {
                     let mainPlayButton = document.querySelector(".mainplay-button");
                     mainPlayButton.classList.remove("fa-circle-pause");
                     mainPlayButton.classList.add("fa-circle-play");
-                } 
-                else {
+                } else {
                     currentAudio.play();
                     element.querySelector("i").classList.remove("fa-play");
                     element.querySelector("i").classList.add("fa-pause");
@@ -53,12 +52,8 @@ async function playsongs(songs) {
                     mainPlayButton.classList.remove("fa-circle-play");
                     mainPlayButton.classList.add("fa-circle-pause");
                 }
-
-            } 
-            
-            else {
-                if (currentAudio && !currentAudio.paused) 
-                    {
+            } else {
+                if (currentAudio && !currentAudio.paused) {
                     currentAudio.pause();
                     currentAudio.currentTime = 0;
 
@@ -84,7 +79,7 @@ async function playsongs(songs) {
                 });
 
                 currentAudio.play();
-                currentButton = element; 
+                currentButton = element;
 
                 element.querySelector("i").classList.remove("fa-play");
                 element.querySelector("i").classList.add("fa-pause");
@@ -95,7 +90,6 @@ async function playsongs(songs) {
             }
         }
     }
-}
 
     // Add control for the main play button
     let mainPlayButton = document.querySelector(".mainplay-button");
@@ -110,8 +104,7 @@ async function playsongs(songs) {
                     currentButton.querySelector("i").classList.remove("fa-play");
                     currentButton.querySelector("i").classList.add("fa-pause");
                 }
-            } 
-            else {
+            } else {
                 currentAudio.pause();
                 mainPlayButton.classList.remove("fa-circle-pause");
                 mainPlayButton.classList.add("fa-circle-play");
@@ -125,12 +118,13 @@ async function playsongs(songs) {
     });
 
     document.querySelector(".bar-bottom").addEventListener("click", (e) => {
-        let pointer = (e.offsetX/e.target.getBoundingClientRect().width)*100
+        let pointer = (e.offsetX/e.target.getBoundingClientRect().width)*100;
         document.querySelector(".circle").style.left = `${pointer}%`;
-        document.querySelector(".progress-bar").style.width = `${pointer}%`
+        document.querySelector(".progress-bar").style.width = `${pointer}%`;
         currentAudio.currentTime = ((currentAudio.duration)*pointer)/100
     }
     )
+}
 
 function updateProgressBar() {
     const progressBar = document.querySelector(".progress-bar");
