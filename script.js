@@ -30,7 +30,10 @@ async function playsongs(songs) {
     for (let index = 0; index < allplaybuttons.length; index++) {
         let element = allplaybuttons[index];
 
-        element.addEventListener("click", () => {
+        element.addEventListener("click", () => playSong(index));
+        element.addEventListener("touchstart", () => playSong(index));
+
+            function playSong(index) { 
             if (currentAudio && currentButton === element) {
                 if (!currentAudio.paused) {
                     currentAudio.pause();
@@ -90,8 +93,9 @@ async function playsongs(songs) {
                 mainPlayButton.classList.remove("fa-circle-play");
                 mainPlayButton.classList.add("fa-circle-pause");
             }
-        });
+        }
     }
+}
 
     // Add control for the main play button
     let mainPlayButton = document.querySelector(".mainplay-button");
@@ -127,7 +131,7 @@ async function playsongs(songs) {
         currentAudio.currentTime = ((currentAudio.duration)*pointer)/100
     }
     )
-}
+
 function updateProgressBar() {
     const progressBar = document.querySelector(".progress-bar");
     const circle = document.querySelector(".circle");
