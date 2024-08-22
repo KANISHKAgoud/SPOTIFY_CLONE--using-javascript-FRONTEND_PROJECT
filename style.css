@@ -682,6 +682,10 @@ video {
   margin-top: 2.5rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .mt-8 {
   margin-top: 2rem;
 }
@@ -814,8 +818,8 @@ video {
   width: 100%;
 }
 
-.w-\[17\.8\%\] {
-  width: 17.8%;
+.w-\[17\.5\%\] {
+  width: 17.5%;
 }
 
 .w-\[19\.1\%\] {
@@ -846,12 +850,12 @@ video {
   width: 100%;
 }
 
-.w-\[17\.5\%\] {
-  width: 17.5%;
-}
-
 .max-w-full {
   max-width: 100%;
+}
+
+.shrink {
+  flex-shrink: 1;
 }
 
 .translate-y-2 {
@@ -1181,6 +1185,10 @@ video {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .font-Spotify-bold {
   font-family: SpotifyMixUI-bold, sans-serif;
 }
@@ -1258,6 +1266,14 @@ video {
 
 .transition-transform {
   transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }

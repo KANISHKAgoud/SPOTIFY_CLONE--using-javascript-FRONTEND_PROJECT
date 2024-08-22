@@ -2,7 +2,7 @@ console.log("java script starts from here!!")
 
 async function getsongs()
 {
-    let f = await fetch("http://127.0.0.1:3000/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/songs/");
+    let f = await fetch("http://127.0.0.1:5500/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/songs/");
     let response = await f.text();
     let div= document.createElement("div")   
     div.innerHTML = response
@@ -452,15 +452,34 @@ back_button_left.addEventListener("click", (element) => {
 )
 
 //HAMBURGER BUTTON
+let hamburger = document.querySelector('.responsive-hamburger')
+
+hamburger.addEventListener("click", () => {
+    let leftPanel = document.querySelector('.left-panel');
+    let rightPanel = document.querySelector('.right-panel');
+    let leftPanel_box = document.querySelector('.left-box-two');
+
+    leftPanel.classList.toggle('active');  
+    rightPanel.classList.toggle('shrink');
+
+    let back_element_hamburger = document.createElement("div")
+    back_element_hamburger.innerHTML = back_element_hamburger.innerHTML +  `<i class="fa-solid fa-circle-chevron-left"></i> back`
+    back_element_hamburger.setAttribute("text", "sm"); 
+    back_element_hamburger.setAttribute("text", "white");
+    back_element_hamburger.setAttribute("text", "right");
+    document.querySelector(".image-logo").after(back_element_hamburger)
+    // leftPanel.querySelector(".image-logo")
+
+    back_element_hamburger.addEventListener("click", () => {
+        leftPanel_box.classList.toggle(`shrink`);
+        leftPanel.classList.toggle('shrink');  
+    }
+    
+    )
+}
+)
 
 
-// let hamburger = document.querySelector('.responsive-hamburger')
-// if (window.matchMedia("(max-width: 1322px)").matches) {
-//     if (hamburger) {
-//         hamburger.classList.remove("hidden");
-//         hamburger.style.display = 'block';
-//     }
-// } 
 
 // FIRST PHOTOS INVISIBLE
 let show_photos= document.querySelector(".show-all-right-panel");
