@@ -154,7 +154,7 @@ async function playsongs(songs) {
                 mainPlayButton.classList.remove("fa-circle-play");
                 mainPlayButton.classList.add("fa-circle-pause");
             }
-        });
+        }, { passive: true });
     }
 
     // Add control for the main play button
@@ -207,7 +207,7 @@ async function playsongs(songs) {
                 }
             }
         }
-    });
+    }, { passive: true });
 
     document.querySelector(".bar-bottom").addEventListener("click", (e) => {
         let pointer = (e.offsetX/e.target.getBoundingClientRect().width)*100
@@ -222,8 +222,7 @@ async function playsongs(songs) {
         document.querySelector(".circle").style.left = `${pointer}%`;
         document.querySelector(".progress-bar").style.width = `${pointer}%`
         currentAudio.currentTime = ((currentAudio.duration)*pointer)/100
-    }
-    )
+    }, { passive: true });
 }
 function updateProgressBar() {
     const progressBar = document.querySelector(".progress-bar");
