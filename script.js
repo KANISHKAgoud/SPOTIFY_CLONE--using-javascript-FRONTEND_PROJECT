@@ -471,8 +471,9 @@ hamburger.addEventListener("click", () => {
     // leftPanel.querySelector(".image-logo")
 
     back_element_hamburger.addEventListener("click", () => {
-        leftPanel_box.classList.toggle(`shrink`);
-        leftPanel.classList.toggle('shrink');  
+        leftPanel.classList.remove('active');
+        rightPanel.classList.remove('shrink');
+        back_element_hamburger.remove();
     }
     
     )
