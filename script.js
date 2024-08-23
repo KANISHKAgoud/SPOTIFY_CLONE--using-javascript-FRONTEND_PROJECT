@@ -224,6 +224,7 @@ async function playsongs(songs) {
         currentAudio.currentTime = ((currentAudio.duration)*pointer)/100
     }, { passive: true });
 }
+
 function updateProgressBar() {
     const progressBar = document.querySelector(".progress-bar");
     const circle = document.querySelector(".circle");
@@ -285,6 +286,18 @@ search_left.addEventListener("click", (e) => {
 
     let search_containers = document.querySelector(".container-search-click")
     search_containers.classList.remove("hidden");
+
+    //responsive
+    
+    let right_header_backsymbols = document.querySelector(".right-header-backsymbols")
+
+    if (window.matchMedia("(max-width: 704px)").matches) {
+
+        if (right_header_backsymbols) {
+            right_header_backsymbols.classList.add("hidden");
+        }
+    
+    }
 
 
     //1st row
@@ -366,6 +379,9 @@ HOME_button_right.addEventListener("click", (element) => {
         const element = photos_artists[index];
         element.classList.remove("hidden");
     }
+
+    let right_header_backsymbols = document.querySelector(".right-header-backsymbols")
+    right_header_backsymbols.classList.remove("hidden");
 
     //2nd row
 
@@ -563,6 +579,8 @@ hamburger.addEventListener("click", () => {
     back_element_hamburger.setAttribute("text", "sm"); 
     back_element_hamburger.setAttribute("text", "white");
     back_element_hamburger.setAttribute("text", "right");
+    back_element_hamburger.classList.remove("right-14")
+    back_element_hamburger.classList.remove("relative")
     document.querySelector(".image-logo").after(back_element_hamburger)
     // leftPanel.querySelector(".image-logo")
 
@@ -570,9 +588,14 @@ hamburger.addEventListener("click", () => {
         leftPanel.classList.remove('active');
         rightPanel.classList.remove('shrink');
         back_element_hamburger.remove();
+    })
+
+    if (window.matchMedia("(max-width: 466px)").matches) {
+        if (back_element_hamburger) {
+            back_element_hamburger.classList.add("relative")
+            back_element_hamburger.classList.add("right-14")
+        }
     }
-    
-    )
 }
 )
 
