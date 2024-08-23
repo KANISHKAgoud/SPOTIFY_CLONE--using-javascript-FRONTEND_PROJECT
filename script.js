@@ -2,7 +2,7 @@ console.log("java script starts from here!!")
 
 async function getsongs()
 {
-    let f = await fetch("https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/songs/");
+    let f = await fetch("https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/");
     let response = await f.text();
     let div= document.createElement("div")   
     div.innerHTML = response
