@@ -1,25 +1,17 @@
 console.log("java script starts from here!!")
 
-async function getsongs()
-{
-    let f = await fetch("https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/");
-    let response = await f.text();
-    let div= document.createElement("div")   
-    div.innerHTML = response
-    let anchor = div.getElementsByTagName("a")
-    let songs=[
-        "https://github.com/KANISHKAgoud/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/blob/main/Songs/Aaj%20Ki%20Raat_64(PagalWorld.com.sb).mp3"      
+async function getsongs() {
+    var songs = [
+        "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Aaj%20Ki%20Raat_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Aayi%20Nai_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Bandeya%20Rey%20Bandeya_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Closer-n-Kabira-(Mashup-Cover)---Vidya-Ft.-Casey-Breves(PaglaWorld.com.cm).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Dekha%20Tenu%20Pehli%20Pehli%20Baar%20Ve_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Desh%20Mere_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Ek%20Zindagi%20Angrezi%20Medium%20128%20Kbps.mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Gulabi%20Sadi%20Ani%20Lali_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Jaanam_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Jugnu_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Love-Story---Taylor-Swift(PaglaWorld.com.cm).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Lover%20Taylor%20Swift-(PagalSongs.Com.IN).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Maana-Ke-Hum-Yaar-Nahi-(Cover)-Vridhi-Saini-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Maine%20To%20Dheere%20Se-(PagalSongs.Com.IN).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Memories---Maroon-5(Pagal-World.Com.In).mp3"
     ]
-    // for (let index = 0; index < anchor.length; index++) {
-    //     const element = anchor[index];
-    //     if (element.href.endsWith("mp3"))
-    //     {
-    //         songs.push(element)
-    //     }
-    // }
-    return songs
-}
+    return songs;
+    
+    // songs.push( "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Night-Changes-One-Direction(PaglaWorld.com.cm).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/O%20Mahi%20O%20Mahi_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/O%20Sajni%20Re_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Perfect%20Ed%20Sheeran-(PagalSongs.Com.IN).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Samjhawan_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Shawn-Mendes(Pagal-World.Com.In).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Ve%20Haniya_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/_Govind%20Bolo_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/_Heeriye_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/_Ram%20Siya%20Ram_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/_Tauba%20Tauba_64(PagalWorld.com.sb).mp3"
+    // )
 
+
+
+}
 
 
 //PLAYING THE SONGS 
@@ -33,7 +25,7 @@ async function playsongs(songs) {
         let element = allplaybuttons[index];
 
         element.addEventListener("click", () => {
-            
+
             if (currentAudio && currentButton === element) {
                 if (!currentAudio.paused) {
                     currentAudio.pause();
@@ -43,7 +35,7 @@ async function playsongs(songs) {
                     let mainPlayButton = document.querySelector(".mainplay-button");
                     mainPlayButton.classList.remove("fa-circle-pause");
                     mainPlayButton.classList.add("fa-circle-play");
-                } 
+                }
                 else {
                     currentAudio.play();
                     element.querySelector("i").classList.remove("fa-play");
@@ -54,11 +46,10 @@ async function playsongs(songs) {
                     mainPlayButton.classList.add("fa-circle-pause");
                 }
 
-            } 
-            
+            }
+
             else {
-                if (currentAudio && !currentAudio.paused) 
-                    {
+                if (currentAudio && !currentAudio.paused) {
                     currentAudio.pause();
                     currentAudio.currentTime = 0;
 
@@ -84,7 +75,7 @@ async function playsongs(songs) {
                 });
 
                 currentAudio.play();
-                currentButton = element; 
+                currentButton = element;
 
                 element.querySelector("i").classList.remove("fa-play");
                 element.querySelector("i").classList.add("fa-pause");
@@ -96,7 +87,7 @@ async function playsongs(songs) {
         });
 
         element.addEventListener("touchstart", () => {
-            
+
             if (currentAudio && currentButton === element) {
                 if (!currentAudio.paused) {
                     currentAudio.pause();
@@ -106,7 +97,7 @@ async function playsongs(songs) {
                     let mainPlayButton = document.querySelector(".mainplay-button");
                     mainPlayButton.classList.remove("fa-circle-pause");
                     mainPlayButton.classList.add("fa-circle-play");
-                } 
+                }
                 else {
                     currentAudio.play();
                     element.querySelector("i").classList.remove("fa-play");
@@ -117,11 +108,10 @@ async function playsongs(songs) {
                     mainPlayButton.classList.add("fa-circle-pause");
                 }
 
-            } 
-            
+            }
+
             else {
-                if (currentAudio && !currentAudio.paused) 
-                    {
+                if (currentAudio && !currentAudio.paused) {
                     currentAudio.pause();
                     currentAudio.currentTime = 0;
 
@@ -147,7 +137,7 @@ async function playsongs(songs) {
                 });
 
                 currentAudio.play();
-                currentButton = element; 
+                currentButton = element;
 
                 element.querySelector("i").classList.remove("fa-play");
                 element.querySelector("i").classList.add("fa-pause");
@@ -172,7 +162,7 @@ async function playsongs(songs) {
                     currentButton.querySelector("i").classList.remove("fa-play");
                     currentButton.querySelector("i").classList.add("fa-pause");
                 }
-            } 
+            }
             else {
                 currentAudio.pause();
                 mainPlayButton.classList.remove("fa-circle-pause");
@@ -197,7 +187,7 @@ async function playsongs(songs) {
                     currentButton.querySelector("i").classList.remove("fa-play");
                     currentButton.querySelector("i").classList.add("fa-pause");
                 }
-            } 
+            }
             else {
                 currentAudio.pause();
                 mainPlayButton.classList.remove("fa-circle-pause");
@@ -212,25 +202,25 @@ async function playsongs(songs) {
     }, { passive: true });
 
     document.querySelector(".bar-bottom").addEventListener("click", (e) => {
-        let pointer = (e.offsetX/e.target.getBoundingClientRect().width)*100
+        let pointer = (e.offsetX / e.target.getBoundingClientRect().width) * 100
         document.querySelector(".circle").style.left = `${pointer}%`;
         document.querySelector(".progress-bar").style.width = `${pointer}%`
-        currentAudio.currentTime = ((currentAudio.duration)*pointer)/100
+        currentAudio.currentTime = ((currentAudio.duration) * pointer) / 100
     }
     )
 
     document.querySelector(".bar-bottom").addEventListener("touchstart", (e) => {
-        let pointer = (e.offsetX/e.target.getBoundingClientRect().width)*100
+        let pointer = (e.offsetX / e.target.getBoundingClientRect().width) * 100
         document.querySelector(".circle").style.left = `${pointer}%`;
         document.querySelector(".progress-bar").style.width = `${pointer}%`
-        currentAudio.currentTime = ((currentAudio.duration)*pointer)/100
+        currentAudio.currentTime = ((currentAudio.duration) * pointer) / 100
     }, { passive: true });
 }
 
 function updateProgressBar() {
     const progressBar = document.querySelector(".progress-bar");
     const circle = document.querySelector(".circle");
-    
+
     // Calculate the percentage of the song played
     const percentagePlayed = (currentAudio.currentTime / currentAudio.duration) * 100;
 
@@ -248,10 +238,10 @@ function resetProgressBar() {
 
 function extractSongName(song) {
     if (typeof song === "string") {
-        return song.split("/songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3" , "").replaceAll("-(Pagal-World.Com.In)", "").replaceAll("-(PagalSongs.Com.IN)", "").replaceAll(`-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm)`, "").replaceAll(`(PaglaWorld.com.cm)`, "")
-    } 
+        return song.split("/Songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3", "").replaceAll("-(Pagal-World.Com.In)", "").replaceAll("-(PagalSongs.Com.IN)", "").replaceAll(`-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm)`, "").replaceAll(`(PaglaWorld.com.cm)`, "")
+    }
     else if (typeof song.href === "string") {
-        return song.href.split("/songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3" , "").replaceAll("(Pagal-World.Com.In)", "").replaceAll("-(PagalSongs.Com.IN)", "").replaceAll(`-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm)`, "").replaceAll(`(PaglaWorld.com.cm)`, "")
+        return song.href.split("/Songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3", "").replaceAll("(Pagal-World.Com.In)", "").replaceAll("-(PagalSongs.Com.IN)", "").replaceAll(`-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm)`, "").replaceAll(`(PaglaWorld.com.cm)`, "")
     }
     return "Unknown Song";
 }
@@ -263,7 +253,7 @@ function updateTimespan() {
 }
 
 function formatTime(seconds) {
-    if (isNaN(seconds)) return "0:00"; 
+    if (isNaN(seconds)) return "0:00";
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = Math.floor(seconds % 60);
     return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
@@ -278,19 +268,19 @@ function formatTime(seconds) {
 // LEFT PANEL STARTS FROM HERE  *****
 
 //search button
-let search_left=document.querySelector(".search-left-panel");
-search_left.addEventListener("click", (e) => { 
+let search_left = document.querySelector(".search-left-panel");
+search_left.addEventListener("click", (e) => {
     e.stopImmediatePropagation();
     let search_title = document.querySelector(".title-rightpanel")
-    search_title.innerHTML= "Browse all"
-    let search_leftPanel= document.querySelector(".search-header-leftPanel");
+    search_title.innerHTML = "Browse all"
+    let search_leftPanel = document.querySelector(".search-header-leftPanel");
     search_leftPanel.classList.remove("hidden");
 
     let search_containers = document.querySelector(".container-search-click")
     search_containers.classList.remove("hidden");
 
     //responsive
-    
+
     let right_header_backsymbols = document.querySelector(".right-header-backsymbols")
 
     if (window.matchMedia("(max-width: 704px)").matches) {
@@ -298,7 +288,7 @@ search_left.addEventListener("click", (e) => {
         if (right_header_backsymbols) {
             right_header_backsymbols.classList.add("hidden");
         }
-    
+
     }
 
 
@@ -317,11 +307,11 @@ search_left.addEventListener("click", (e) => {
         element.classList.add("hidden");
     }
 
-    let main_body_right_side_2ndrow= document.querySelector(".container2-albums");
+    let main_body_right_side_2ndrow = document.querySelector(".container2-albums");
     main_body_right_side_2ndrow.classList.add("hidden");
 
     //3rd row 
-    let main_body_right_side_3rdrow= document.querySelector(".Feature-title");
+    let main_body_right_side_3rdrow = document.querySelector(".Feature-title");
     main_body_right_side_3rdrow.classList.add("hidden");
 
     let photos_features = document.querySelectorAll(".photos-features");
@@ -333,13 +323,13 @@ search_left.addEventListener("click", (e) => {
     //back button
     let back_button_left = document.querySelector(".back-button")
     back_button_left.classList.add("font-extrabold")
-    back_button_left.classList.add( "text-white")
+    back_button_left.classList.add("text-white")
     back_button_left.classList.add("text-xl")
 
     //HOME button
     let home_button_left = document.querySelector(".home-left-panel")
     home_button_left.classList.add("font-extrabold")
-    home_button_left.classList.add( "text-white")
+    home_button_left.classList.add("text-white")
     home_button_left.classList.add("text-3xl")
 
 }
@@ -370,7 +360,7 @@ HOME_button_right.addEventListener("click", (element) => {
         element.classList.add("hidden");
     }
 
-    let search_leftPanel= document.querySelector(".search-header-leftPanel");
+    let search_leftPanel = document.querySelector(".search-header-leftPanel");
     search_leftPanel.classList.add("hidden");
 
     let search_containers = document.querySelector(".container-search-click")
@@ -400,15 +390,15 @@ HOME_button_right.addEventListener("click", (element) => {
         element.classList.add("hidden")
     }
 
-    let main_body_right_side_2ndrow= document.querySelector(".container2-albums");
+    let main_body_right_side_2ndrow = document.querySelector(".container2-albums");
     main_body_right_side_2ndrow.classList.remove("hidden");
 
     //1st row 
-    let main_body_right_side_1strow= document.querySelector(".content-right-1strow");
+    let main_body_right_side_1strow = document.querySelector(".content-right-1strow");
     main_body_right_side_1strow.classList.remove("hidden");
 
     // 3rd row
-    let main_body_right_side_3rdrow= document.querySelector(".Feature-title");
+    let main_body_right_side_3rdrow = document.querySelector(".Feature-title");
     main_body_right_side_3rdrow.classList.remove("hidden");
 
     let photos_features = document.querySelectorAll(".photos-features");
@@ -437,7 +427,7 @@ back_button_left.addEventListener("click", (element) => {
         element.classList.add("hidden");
     }
 
-    let search_leftPanel= document.querySelector(".search-header-leftPanel");
+    let search_leftPanel = document.querySelector(".search-header-leftPanel");
     search_leftPanel.classList.add("hidden");
 
     let search_containers = document.querySelector(".container-search-click")
@@ -457,7 +447,7 @@ back_button_left.addEventListener("click", (element) => {
     let photos_albums_invisible_responsive1 = document.querySelector(".albums1-responsive")
     let photos_albums_invisible_responsive2 = document.querySelector(".albums2-responsive")
     let photos_albums_invisible_responsive3 = document.querySelector(".albums3-responsive")
-    
+
     if (window.matchMedia("(max-width: 1226px)").matches) {
         if (photos_invisible_responsive1) {
             photos_invisible_responsive1.classList.add('hidden');
@@ -518,9 +508,9 @@ back_button_left.addEventListener("click", (element) => {
         if (photos_albums_invisible_responsive3) {
             photos_albums_invisible_responsive3.classList.add('hidden');
             photos_albums_invisible_responsive3.style.display = '';
-        
+
         }
-    } 
+    }
 
 
     //2nd row
@@ -538,15 +528,15 @@ back_button_left.addEventListener("click", (element) => {
         element.classList.add("hidden")
     }
 
-    let main_body_right_side_2ndrow= document.querySelector(".container2-albums");
+    let main_body_right_side_2ndrow = document.querySelector(".container2-albums");
     main_body_right_side_2ndrow.classList.remove("hidden");
 
     //1st row 
-    let main_body_right_side_1strow= document.querySelector(".content-right-1strow");
+    let main_body_right_side_1strow = document.querySelector(".content-right-1strow");
     main_body_right_side_1strow.classList.remove("hidden");
 
     // 3rd row
-    let main_body_right_side_3rdrow= document.querySelector(".Feature-title");
+    let main_body_right_side_3rdrow = document.querySelector(".Feature-title");
     main_body_right_side_3rdrow.classList.remove("hidden");
 
     let photos_features = document.querySelectorAll(".photos-features");
@@ -573,12 +563,12 @@ hamburger.addEventListener("click", () => {
     let rightPanel = document.querySelector('.right-panel');
     let leftPanel_box = document.querySelector('.left-box-two');
 
-    leftPanel.classList.toggle('active');  
+    leftPanel.classList.toggle('active');
     rightPanel.classList.toggle('shrink');
 
     let back_element_hamburger = document.createElement("div")
-    back_element_hamburger.innerHTML = back_element_hamburger.innerHTML +  `<i class="fa-solid fa-circle-chevron-left"></i> back`
-    back_element_hamburger.setAttribute("text", "sm"); 
+    back_element_hamburger.innerHTML = back_element_hamburger.innerHTML + `<i class="fa-solid fa-circle-chevron-left"></i> back`
+    back_element_hamburger.setAttribute("text", "sm");
     back_element_hamburger.setAttribute("text", "white");
     back_element_hamburger.setAttribute("text", "right");
     back_element_hamburger.classList.remove("right-14")
@@ -604,7 +594,7 @@ hamburger.addEventListener("click", () => {
 
 
 // FIRST PHOTOS INVISIBLE
-let show_photos= document.querySelector(".show-all-right-panel");
+let show_photos = document.querySelector(".show-all-right-panel");
 show_photos.addEventListener("click", (element) => {
     let photos_invisible_responsive1 = document.querySelector('.photos-card-invisible-responsive');
     let photos_invisible_responsive2 = document.querySelector('.photos-card-invisible-responsive2');
@@ -613,8 +603,8 @@ show_photos.addEventListener("click", (element) => {
     let photos_container_artists = document.getElementById("containers-photos");
     photos_container_artists.classList.add("flex-wrap");
 
-    let main_body_right_side= document.getElementById("main-content-right-panel");
-    main_body_right_side.classList.add("overflow-y-hidden" ,"scrollable");
+    let main_body_right_side = document.getElementById("main-content-right-panel");
+    main_body_right_side.classList.add("overflow-y-hidden", "scrollable");
 
     let photos_invisible_artists = document.querySelectorAll(".photos-cards-invisible");
     for (let index = 0; index < photos_invisible_artists.length; index++) {
@@ -699,11 +689,11 @@ show_photos.addEventListener("click", (element) => {
             photos_invisible_responsive3.style.height = '30vh';
         }
     }
-    
+
     //back button
     let back_button_left = document.querySelector(".back-button")
     back_button_left.classList.add("font-extrabold")
-    back_button_left.classList.add( "text-white")
+    back_button_left.classList.add("text-white")
     back_button_left.classList.add("text-xl")
 
     //2nd row
@@ -713,11 +703,11 @@ show_photos.addEventListener("click", (element) => {
         element.classList.add("hidden");
     }
 
-    let main_body_right_side_2ndrow= document.querySelector(".container2-albums");
+    let main_body_right_side_2ndrow = document.querySelector(".container2-albums");
     main_body_right_side_2ndrow.classList.add("hidden");
 
     //3rd row
-    let main_body_right_side_3rdrow= document.querySelector(".Feature-title");
+    let main_body_right_side_3rdrow = document.querySelector(".Feature-title");
     main_body_right_side_3rdrow.classList.add("hidden");
 
     let photos_features = document.querySelectorAll(".photos-features");
@@ -729,7 +719,7 @@ show_photos.addEventListener("click", (element) => {
     //HOME button
     let home_button_left = document.querySelector(".home-left-panel")
     home_button_left.classList.add("font-extrabold")
-    home_button_left.classList.add( "text-white")
+    home_button_left.classList.add("text-white")
     home_button_left.classList.add("text-3xl")
 
 }
@@ -740,7 +730,7 @@ show_photos.addEventListener("click", (element) => {
 // Second photos invisible
 let show_albums = document.querySelector(".show-all-right-panel-albums");
 show_albums.addEventListener("click", (element) => {
-    
+
     let photos_artists = document.querySelectorAll(".photos-cards");
     for (let index = 0; index < photos_artists.length; index++) {
         const element = photos_artists[index];
@@ -766,22 +756,22 @@ show_albums.addEventListener("click", (element) => {
         element.classList.add("w-[25%]");
     }
 
-    let main_body_right_side_1strow= document.querySelector(".content-right-1strow");
+    let main_body_right_side_1strow = document.querySelector(".content-right-1strow");
     main_body_right_side_1strow.classList.add("hidden");
 
-    let main_body_right_side_3rdrow= document.querySelector(".Feature-title");
+    let main_body_right_side_3rdrow = document.querySelector(".Feature-title");
     main_body_right_side_3rdrow.classList.add("hidden");
 
     //back button
     let back_button_left = document.querySelector(".back-button")
     back_button_left.classList.add("font-extrabold")
-    back_button_left.classList.add( "text-white")
+    back_button_left.classList.add("text-white")
     back_button_left.classList.add("text-xl")
 
     //HOME button
     let home_button_left = document.querySelector(".home-left-panel")
     home_button_left.classList.add("font-extrabold")
-    home_button_left.classList.add( "text-white")
+    home_button_left.classList.add("text-white")
     home_button_left.classList.add("text-3xl")
 
     //responsive
@@ -822,7 +812,7 @@ show_albums.addEventListener("click", (element) => {
         if (photos_albums_invisible_responsive3) {
             photos_albums_invisible_responsive3.classList.remove('hidden');
             photos_albums_invisible_responsive3.style.display = 'block';
-        
+
         }
     }
 }
@@ -834,17 +824,18 @@ async function main() {
     let songs = await getsongs();
     console.log(songs)
     await playsongs(songs)
-    let songs_name =[]
+    let songs_name = []
     let song_time = []
 
     for (let index = 0; index < songs.length; index++) {
         const element = songs[index];
-        songs_name.push (element.href.split("/songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", ""))
+        const songPart = element.split("/Songs/")[1];
+        songs_name.push(songPart.replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", ""))
 
     }
     console.log(songs_name)
     console.log(song_time)
-    
-    
+
+
 }
 main()
