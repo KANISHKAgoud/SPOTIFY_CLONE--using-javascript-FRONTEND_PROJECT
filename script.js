@@ -7,14 +7,16 @@ async function getsongs()
     let div= document.createElement("div")   
     div.innerHTML = response
     let anchor = div.getElementsByTagName("a")
-    let songs=[]
-    for (let index = 0; index < anchor.length; index++) {
-        const element = anchor[index];
-        if (element.href.endsWith("mp3"))
-        {
-            songs.push(element)
-        }
-    }
+    let songs=[
+        "https://github.com/KANISHKAgoud/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/blob/main/Songs/Aaj%20Ki%20Raat_64(PagalWorld.com.sb).mp3"      
+    ]
+    // for (let index = 0; index < anchor.length; index++) {
+    //     const element = anchor[index];
+    //     if (element.href.endsWith("mp3"))
+    //     {
+    //         songs.push(element)
+    //     }
+    // }
     return songs
 }
 
