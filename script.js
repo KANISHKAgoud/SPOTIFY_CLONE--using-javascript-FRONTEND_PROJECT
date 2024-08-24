@@ -157,6 +157,7 @@ async function playsongs(songs) {
                 currentAudio.play();
                 mainPlayButton.classList.remove("fa-circle-play");
                 mainPlayButton.classList.add("fa-circle-pause");
+                
 
                 if (currentButton) {
                     currentButton.querySelector("i").classList.remove("fa-play");
