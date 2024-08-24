@@ -847,7 +847,7 @@ async function main() {
         const element = songs[index];
 
         // const songPart = element.split("/Songs/")[1];
-        songs_name.push(element.split("/Songs/songs_folder/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", ""))
+        songs_name.push(element.href.split("/Songs/songs_folder/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", ""))
 
     }
     console.log(songs_name)
