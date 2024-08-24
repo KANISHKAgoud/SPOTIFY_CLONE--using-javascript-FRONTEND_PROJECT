@@ -38,148 +38,29 @@ async function playsongs(songs) {
     for (let index = 0; index < allplaybuttons.length; index++) {
         let element = allplaybuttons[index];
 
-        element.addEventListener("click", () => {
-
-            if (currentAudio && currentButton === element) {
-                if (!currentAudio.paused) {
-                    currentAudio.pause();
-                    element.querySelector("i").classList.remove("fa-pause");
-                    element.querySelector("i").classList.add("fa-play");
-
-                    let mainPlayButton = document.querySelector(".mainplay-button");
-                    mainPlayButton.classList.remove("fa-circle-pause");
-                    mainPlayButton.classList.add("fa-circle-play");
-                }
-                else {
-                    currentAudio.play();
-                    element.querySelector("i").classList.remove("fa-play");
-                    element.querySelector("i").classList.add("fa-pause");
-
-                    let mainPlayButton = document.querySelector(".mainplay-button");
-                    mainPlayButton.classList.remove("fa-circle-play");
-                    mainPlayButton.classList.add("fa-circle-pause");
-                }
-
-            }
-
-            else {
-                if (currentAudio && !currentAudio.paused) {
-                    currentAudio.pause();
-                    currentAudio.currentTime = 0;
-
-                    let prevButton = currentButton;
-                    if (prevButton) {
-                        prevButton.querySelector("i").classList.remove("fa-pause");
-                        prevButton.querySelector("i").classList.add("fa-play");
-                    }
-                }
-
-                currentAudio = new Audio(songs[index]);
-                let songName = extractSongName(songs[index]);
-                document.querySelector(".nameOf-song").textContent = songName;
-
-                currentAudio.addEventListener("loadedmetadata", () => {
-                    updateTimespan();
-                    resetProgressBar();
-                });
-
-                currentAudio.addEventListener("timeupdate", () => {
-                    updateTimespan();
-                    updateProgressBar();
-                });
-
-                currentAudio.play();
-                currentButton = element;
-
-                element.querySelector("i").classList.remove("fa-play");
-                element.querySelector("i").classList.add("fa-pause");
-
-                let mainPlayButton = document.querySelector(".mainplay-button");
-                mainPlayButton.classList.remove("fa-circle-play");
-                mainPlayButton.classList.add("fa-circle-pause");
-            }
+        element.addEventListener("click", async () => {
+            await handlePlayPause(element, songs[index]);
         });
 
-        element.addEventListener("touchstart", () => {
-
-            if (currentAudio && currentButton === element) {
-                if (!currentAudio.paused) {
-                    currentAudio.pause();
-                    element.querySelector("i").classList.remove("fa-pause");
-                    element.querySelector("i").classList.add("fa-play");
-
-                    let mainPlayButton = document.querySelector(".mainplay-button");
-                    mainPlayButton.classList.remove("fa-circle-pause");
-                    mainPlayButton.classList.add("fa-circle-play");
-                }
-                else {
-                    currentAudio.play();
-                    element.querySelector("i").classList.remove("fa-play");
-                    element.querySelector("i").classList.add("fa-pause");
-
-                    let mainPlayButton = document.querySelector(".mainplay-button");
-                    mainPlayButton.classList.remove("fa-circle-play");
-                    mainPlayButton.classList.add("fa-circle-pause");
-                }
-
-            }
-
-            else {
-                if (currentAudio && !currentAudio.paused) {
-                    currentAudio.pause();
-                    currentAudio.currentTime = 0;
-
-                    let prevButton = currentButton;
-                    if (prevButton) {
-                        prevButton.querySelector("i").classList.remove("fa-pause");
-                        prevButton.querySelector("i").classList.add("fa-play");
-                    }
-                }
-
-                currentAudio = new Audio(songs[index].href || songs[index]);
-                let songName = extractSongName(songs[index]);
-                document.querySelector(".nameOf-song").textContent = songName;
-
-                currentAudio.addEventListener("loadedmetadata", () => {
-                    updateTimespan();
-                    resetProgressBar();
-                });
-
-                currentAudio.addEventListener("timeupdate", () => {
-                    updateTimespan();
-                    updateProgressBar();
-                });
-
-                currentAudio.play();
-                currentButton = element;
-
-                element.querySelector("i").classList.remove("fa-play");
-                element.querySelector("i").classList.add("fa-pause");
-
-                let mainPlayButton = document.querySelector(".mainplay-button");
-                mainPlayButton.classList.remove("fa-circle-play");
-                mainPlayButton.classList.add("fa-circle-pause");
-            }
+        element.addEventListener("touchstart", async () => {
+            await handlePlayPause(element, songs[index]);
         }, { passive: true });
     }
 
-    // Add control for the main play button
     let mainPlayButton = document.querySelector(".mainplay-button");
-    mainPlayButton.addEventListener("click", () => {
+    mainPlayButton.addEventListener("click", async () => {
         if (currentAudio) {
             if (currentAudio.paused) {
-                currentAudio.play();
+                await playAudio(currentAudio);
                 mainPlayButton.classList.remove("fa-circle-play");
                 mainPlayButton.classList.add("fa-circle-pause");
-                
 
                 if (currentButton) {
                     currentButton.querySelector("i").classList.remove("fa-play");
                     currentButton.querySelector("i").classList.add("fa-pause");
                 }
-            }
-            else {
-                currentAudio.pause();
+            } else {
+                pauseAudio(currentAudio);
                 mainPlayButton.classList.remove("fa-circle-pause");
                 mainPlayButton.classList.add("fa-circle-play");
 
@@ -191,10 +72,10 @@ async function playsongs(songs) {
         }
     });
 
-    mainPlayButton.addEventListener("touchstart", () => {
+    mainPlayButton.addEventListener("touchstart", async () => {
         if (currentAudio) {
             if (currentAudio.paused) {
-                currentAudio.play();
+                await playAudio(currentAudio);
                 mainPlayButton.classList.remove("fa-circle-play");
                 mainPlayButton.classList.add("fa-circle-pause");
 
@@ -202,9 +83,8 @@ async function playsongs(songs) {
                     currentButton.querySelector("i").classList.remove("fa-play");
                     currentButton.querySelector("i").classList.add("fa-pause");
                 }
-            }
-            else {
-                currentAudio.pause();
+            } else {
+                pauseAudio(currentAudio);
                 mainPlayButton.classList.remove("fa-circle-pause");
                 mainPlayButton.classList.add("fa-circle-play");
 
@@ -217,20 +97,80 @@ async function playsongs(songs) {
     }, { passive: true });
 
     document.querySelector(".bar-bottom").addEventListener("click", (e) => {
-        let pointer = (e.offsetX / e.target.getBoundingClientRect().width) * 100
+        let pointer = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
         document.querySelector(".circle").style.left = `${pointer}%`;
-        document.querySelector(".progress-bar").style.width = `${pointer}%`
-        currentAudio.currentTime = ((currentAudio.duration) * pointer) / 100
-    }
-    )
+        document.querySelector(".progress-bar").style.width = `${pointer}%`;
+        currentAudio.currentTime = ((currentAudio.duration) * pointer) / 100;
+    });
 
     document.querySelector(".bar-bottom").addEventListener("touchstart", (e) => {
-        let pointer = (e.offsetX / e.target.getBoundingClientRect().width) * 100
+        let pointer = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
         document.querySelector(".circle").style.left = `${pointer}%`;
-        document.querySelector(".progress-bar").style.width = `${pointer}%`
-        currentAudio.currentTime = ((currentAudio.duration) * pointer) / 100
+        document.querySelector(".progress-bar").style.width = `${pointer}%`;
+        currentAudio.currentTime = ((currentAudio.duration) * pointer) / 100;
     }, { passive: true });
 }
+
+async function handlePlayPause(element, song) {
+    if (currentAudio && currentButton === element) {
+        if (!currentAudio.paused) {
+            pauseAudio(currentAudio);
+            updatePlayButton(element, false);
+        } else {
+            await playAudio(currentAudio);
+            updatePlayButton(element, true);
+        }
+    } else {
+        if (currentAudio && !currentAudio.paused) {
+            pauseAudio(currentAudio);
+            currentAudio.currentTime = 0;
+            updatePlayButton(currentButton, false);
+        }
+
+        currentAudio = new Audio(song);
+        let songName = extractSongName(song);
+        document.querySelector(".nameOf-song").textContent = songName;
+
+        currentAudio.addEventListener("loadedmetadata", () => {
+            updateTimespan();
+            resetProgressBar();
+        });
+
+        currentAudio.addEventListener("timeupdate", () => {
+            updateTimespan();
+            updateProgressBar();
+        });
+
+        await playAudio(currentAudio);
+        currentButton = element;
+        updatePlayButton(element, true);
+    }
+}
+
+async function playAudio(audio) {
+    try {
+        await audio.play();
+    } catch (error) {
+        console.error('Playback failed:', error);
+    }
+}
+
+function pauseAudio(audio) {
+    audio.pause();
+}
+
+function updatePlayButton(button, isPlaying) {
+    if (isPlaying) {
+        button.querySelector("i").classList.remove("fa-play");
+        button.querySelector("i").classList.add("fa-pause");
+    } else {
+        button.querySelector("i").classList.remove("fa-pause");
+        button.querySelector("i").classList.add("fa-play");
+    }
+}
+
+// (Other functions remain unchanged: updateProgressBar, resetProgressBar, extractSongName, updateTimespan, formatTime)
+
 
 function updateProgressBar() {
     const progressBar = document.querySelector(".progress-bar");
