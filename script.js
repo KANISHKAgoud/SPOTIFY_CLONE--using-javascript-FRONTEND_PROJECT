@@ -1,7 +1,7 @@
 console.log("java script starts from here!!")
 
 async function getsongs(folder) {
-    let f =await fetch (`http://127.0.0.1:5500/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/${folder}/`)
+    let f =await fetch (`/${folder}/`)
     let response = await f.text();
     let div = document.createElement("div")
     div.innerHTML = response 
