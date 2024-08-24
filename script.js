@@ -1,17 +1,31 @@
 console.log("java script starts from here!!")
 
-async function getsongs() {
-    var songs = [
-        "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Aaj%20Ki%20Raat_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Aayi%20Nai_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Bandeya%20Rey%20Bandeya_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Closer-n-Kabira-(Mashup-Cover)---Vidya-Ft.-Casey-Breves(PaglaWorld.com.cm).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Dekha%20Tenu%20Pehli%20Pehli%20Baar%20Ve_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Desh%20Mere_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Ek%20Zindagi%20Angrezi%20Medium%20128%20Kbps.mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Gulabi%20Sadi%20Ani%20Lali_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Jaanam_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Jugnu_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Love-Story---Taylor-Swift(PaglaWorld.com.cm).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Lover%20Taylor%20Swift-(PagalSongs.Com.IN).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Maana-Ke-Hum-Yaar-Nahi-(Cover)-Vridhi-Saini-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Maine%20To%20Dheere%20Se-(PagalSongs.Com.IN).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Memories---Maroon-5(Pagal-World.Com.In).mp3"
-    ]
+async function getsongs(folder) {
+    let f =await fetch (`http://127.0.0.1:5500/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/${folder}/`)
+    let response = await f.text();
+    let div = document.createElement("div")
+    div.innerHTML = response 
+    let anchor = div.getElementsByTagName ("a");
+    let songs=[]
+    for (let index = 0; index < anchor.length; index++) {
+        const element = anchor[index];
+        if (element.href.endsWith("mp3"))
+        {
+            songs.push(element)
+        }
+    }
+
+    
     return songs;
+}
+    // var songs = [
+    //     "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Aaj%20Ki%20Raat_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Aayi%20Nai_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Bandeya%20Rey%20Bandeya_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Closer-n-Kabira-(Mashup-Cover)---Vidya-Ft.-Casey-Breves(PaglaWorld.com.cm).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Dekha%20Tenu%20Pehli%20Pehli%20Baar%20Ve_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Desh%20Mere_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Ek%20Zindagi%20Angrezi%20Medium%20128%20Kbps.mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Gulabi%20Sadi%20Ani%20Lali_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Jaanam_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Jugnu_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Love-Story---Taylor-Swift(PaglaWorld.com.cm).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Lover%20Taylor%20Swift-(PagalSongs.Com.IN).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Maana-Ke-Hum-Yaar-Nahi-(Cover)-Vridhi-Saini-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Maine%20To%20Dheere%20Se-(PagalSongs.Com.IN).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Memories---Maroon-5(Pagal-World.Com.In).mp3"
+    // ]
+    
     
     // songs.push( "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Night-Changes-One-Direction(PaglaWorld.com.cm).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/O%20Mahi%20O%20Mahi_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/O%20Sajni%20Re_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Perfect%20Ed%20Sheeran-(PagalSongs.Com.IN).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Samjhawan_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Shawn-Mendes(Pagal-World.Com.In).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Ve%20Haniya_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/_Govind%20Bolo_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/_Heeriye_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/_Ram%20Siya%20Ram_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/_Tauba%20Tauba_64(PagalWorld.com.sb).mp3"
     // )
 
-
-
-}
 
 
 //PLAYING THE SONGS 
@@ -239,10 +253,10 @@ function resetProgressBar() {
 
 function extractSongName(song) {
     if (typeof song === "string") {
-        return song.split("/Songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3", "").replaceAll("-(Pagal-World.Com.In)", "").replaceAll("-(PagalSongs.Com.IN)", "").replaceAll(`-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm)`, "").replaceAll(`(PaglaWorld.com.cm)`, "")
+        return song.split("/Songs/songs_folder/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3", "").replaceAll("-(Pagal-World.Com.In)", "").replaceAll("-(PagalSongs.Com.IN)", "").replaceAll(`-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm)`, "").replaceAll(`(PaglaWorld.com.cm)`, "")
     }
     else if (typeof song.href === "string") {
-        return song.href.split("/Songs/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3", "").replaceAll("(Pagal-World.Com.In)", "").replaceAll("-(PagalSongs.Com.IN)", "").replaceAll(`-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm)`, "").replaceAll(`(PaglaWorld.com.cm)`, "")
+        return song.href.split("/Songs/songs_folder/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3", "").replaceAll("(Pagal-World.Com.In)", "").replaceAll("-(PagalSongs.Com.IN)", "").replaceAll(`-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm)`, "").replaceAll(`(PaglaWorld.com.cm)`, "")
     }
     return "Unknown Song";
 }
@@ -822,7 +836,7 @@ show_albums.addEventListener("click", (element) => {
 
 
 async function main() {
-    let songs = await getsongs();
+    let songs = await getsongs("Songs/songs_folder");
     console.log(songs)
     await playsongs(songs)
     let songs_name = []
@@ -830,8 +844,9 @@ async function main() {
 
     for (let index = 0; index < songs.length; index++) {
         const element = songs[index];
-        const songPart = element.split("/Songs/")[1];
-        songs_name.push(songPart.replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", ""))
+
+        // const songPart = element.split("/Songs/")[1];
+        songs_name.push(element.href.split("/Songs/songs_folder/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", ""))
 
     }
     console.log(songs_name)
