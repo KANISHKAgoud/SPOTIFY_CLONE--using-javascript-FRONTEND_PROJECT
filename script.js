@@ -100,68 +100,68 @@ async function playsongs(songs) {
             }
         });
 
-        element.addEventListener("touchstart", () => {
+        // element.addEventListener("touchstart", () => {
 
-            if (currentAudio && currentButton === element) {
-                if (!currentAudio.paused) {
-                    currentAudio.pause();
-                    element.querySelector("i").classList.remove("fa-pause");
-                    element.querySelector("i").classList.add("fa-play");
+        //     if (currentAudio && currentButton === element) {
+        //         if (!currentAudio.paused) {
+        //             currentAudio.pause();
+        //             element.querySelector("i").classList.remove("fa-pause");
+        //             element.querySelector("i").classList.add("fa-play");
 
-                    let mainPlayButton = document.querySelector(".mainplay-button");
-                    mainPlayButton.classList.remove("fa-circle-pause");
-                    mainPlayButton.classList.add("fa-circle-play");
-                }
-                else {
-                    currentAudio.play();
-                    element.querySelector("i").classList.remove("fa-play");
-                    element.querySelector("i").classList.add("fa-pause");
+        //             let mainPlayButton = document.querySelector(".mainplay-button");
+        //             mainPlayButton.classList.remove("fa-circle-pause");
+        //             mainPlayButton.classList.add("fa-circle-play");
+        //         }
+        //         else {
+        //             currentAudio.play();
+        //             element.querySelector("i").classList.remove("fa-play");
+        //             element.querySelector("i").classList.add("fa-pause");
 
-                    let mainPlayButton = document.querySelector(".mainplay-button");
-                    mainPlayButton.classList.remove("fa-circle-play");
-                    mainPlayButton.classList.add("fa-circle-pause");
-                }
+        //             let mainPlayButton = document.querySelector(".mainplay-button");
+        //             mainPlayButton.classList.remove("fa-circle-play");
+        //             mainPlayButton.classList.add("fa-circle-pause");
+        //         }
 
-            }
+        //     }
 
-            else {
-                if (currentAudio && !currentAudio.paused) {
-                    currentAudio.pause();
-                    currentAudio.currentTime = 0;
+        //     else {
+        //         if (currentAudio && !currentAudio.paused) {
+        //             currentAudio.pause();
+        //             currentAudio.currentTime = 0;
 
-                    let prevButton = currentButton;
-                    if (prevButton) {
-                        prevButton.querySelector("i").classList.remove("fa-pause");
-                        prevButton.querySelector("i").classList.add("fa-play");
-                    }
-                }
+        //             let prevButton = currentButton;
+        //             if (prevButton) {
+        //                 prevButton.querySelector("i").classList.remove("fa-pause");
+        //                 prevButton.querySelector("i").classList.add("fa-play");
+        //             }
+        //         }
 
-                currentAudio = new Audio(songs[index]);
-                // currentAudio = new Audio(songs[index].href || songs[index]);
-                let songName = extractSongName(songs[index]);
-                document.querySelector(".nameOf-song").textContent = songName;
+        //         currentAudio = new Audio(songs[index]);
+        //         // currentAudio = new Audio(songs[index].href || songs[index]);
+        //         let songName = extractSongName(songs[index]);
+        //         document.querySelector(".nameOf-song").textContent = songName;
 
-                currentAudio.addEventListener("loadedmetadata", () => {
-                    updateTimespan();
-                    resetProgressBar();
-                });
+        //         currentAudio.addEventListener("loadedmetadata", () => {
+        //             updateTimespan();
+        //             resetProgressBar();
+        //         });
 
-                currentAudio.addEventListener("timeupdate", () => {
-                    updateTimespan();
-                    updateProgressBar();
-                });
+        //         currentAudio.addEventListener("timeupdate", () => {
+        //             updateTimespan();
+        //             updateProgressBar();
+        //         });
 
-                currentAudio.play();
-                currentButton = element;
+        //         currentAudio.play();
+        //         currentButton = element;
 
-                element.querySelector("i").classList.remove("fa-play");
-                element.querySelector("i").classList.add("fa-pause");
+        //         element.querySelector("i").classList.remove("fa-play");
+        //         element.querySelector("i").classList.add("fa-pause");
 
-                let mainPlayButton = document.querySelector(".mainplay-button");
-                mainPlayButton.classList.remove("fa-circle-play");
-                mainPlayButton.classList.add("fa-circle-pause");
-            }
-        }, { passive: true });
+        //         let mainPlayButton = document.querySelector(".mainplay-button");
+        //         mainPlayButton.classList.remove("fa-circle-play");
+        //         mainPlayButton.classList.add("fa-circle-pause");
+        //     }
+        // }, { passive: true });
     }
 
     // Add control for the main play button
@@ -192,30 +192,30 @@ async function playsongs(songs) {
         }
     });
 
-    mainPlayButton.addEventListener("touchstart", () => {
-        if (currentAudio) {
-            if (currentAudio.paused) {
-                currentAudio.play();
-                mainPlayButton.classList.remove("fa-circle-play");
-                mainPlayButton.classList.add("fa-circle-pause");
+    // mainPlayButton.addEventListener("touchstart", () => {
+    //     if (currentAudio) {
+    //         if (currentAudio.paused) {
+    //             currentAudio.play();
+    //             mainPlayButton.classList.remove("fa-circle-play");
+    //             mainPlayButton.classList.add("fa-circle-pause");
 
-                if (currentButton) {
-                    currentButton.querySelector("i").classList.remove("fa-play");
-                    currentButton.querySelector("i").classList.add("fa-pause");
-                }
-            }
-            else {
-                currentAudio.pause();
-                mainPlayButton.classList.remove("fa-circle-pause");
-                mainPlayButton.classList.add("fa-circle-play");
+    //             if (currentButton) {
+    //                 currentButton.querySelector("i").classList.remove("fa-play");
+    //                 currentButton.querySelector("i").classList.add("fa-pause");
+    //             }
+    //         }
+    //         else {
+    //             currentAudio.pause();
+    //             mainPlayButton.classList.remove("fa-circle-pause");
+    //             mainPlayButton.classList.add("fa-circle-play");
 
-                if (currentButton) {
-                    currentButton.querySelector("i").classList.remove("fa-pause");
-                    currentButton.querySelector("i").classList.add("fa-play");
-                }
-            }
-        }
-    }, { passive: true });
+    //             if (currentButton) {
+    //                 currentButton.querySelector("i").classList.remove("fa-pause");
+    //                 currentButton.querySelector("i").classList.add("fa-play");
+    //             }
+    //         }
+    //     }
+    // }, { passive: true });
 
     document.querySelector(".bar-bottom").addEventListener("click", (e) => {
         let pointer = (e.offsetX / e.target.getBoundingClientRect().width) * 100
@@ -225,12 +225,12 @@ async function playsongs(songs) {
     }
     )
 
-    document.querySelector(".bar-bottom").addEventListener("touchstart", (e) => {
-        let pointer = (e.offsetX / e.target.getBoundingClientRect().width) * 100
-        document.querySelector(".circle").style.left = `${pointer}%`;
-        document.querySelector(".progress-bar").style.width = `${pointer}%`
-        currentAudio.currentTime = ((currentAudio.duration) * pointer) / 100
-    }, { passive: true });
+    // document.querySelector(".bar-bottom").addEventListener("touchstart", (e) => {
+    //     let pointer = (e.offsetX / e.target.getBoundingClientRect().width) * 100
+    //     document.querySelector(".circle").style.left = `${pointer}%`;
+    //     document.querySelector(".progress-bar").style.width = `${pointer}%`
+    //     currentAudio.currentTime = ((currentAudio.duration) * pointer) / 100
+    // }, { passive: true });
 }
 
 function updateProgressBar() {
