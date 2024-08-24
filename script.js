@@ -136,7 +136,8 @@ async function playsongs(songs) {
                     }
                 }
 
-                currentAudio = new Audio(songs[index].href || songs[index]);
+                currentAudio = new Audio(songs[index]);
+                // currentAudio = new Audio(songs[index].href || songs[index]);
                 let songName = extractSongName(songs[index]);
                 document.querySelector(".nameOf-song").textContent = songName;
 
