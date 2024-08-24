@@ -18,19 +18,12 @@ async function getsongs() {
     
     return songs;
 }
-    // var songs = [
-    //     "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Aaj%20Ki%20Raat_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Aayi%20Nai_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Bandeya%20Rey%20Bandeya_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Closer-n-Kabira-(Mashup-Cover)---Vidya-Ft.-Casey-Breves(PaglaWorld.com.cm).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Dekha%20Tenu%20Pehli%20Pehli%20Baar%20Ve_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Desh%20Mere_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Ek%20Zindagi%20Angrezi%20Medium%20128%20Kbps.mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Gulabi%20Sadi%20Ani%20Lali_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Jaanam_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Jugnu_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Love-Story---Taylor-Swift(PaglaWorld.com.cm).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Lover%20Taylor%20Swift-(PagalSongs.Com.IN).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Maana-Ke-Hum-Yaar-Nahi-(Cover)-Vridhi-Saini-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Maine%20To%20Dheere%20Se-(PagalSongs.Com.IN).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Memories---Maroon-5(Pagal-World.Com.In).mp3"
-    // ]
-    
-    
-    // songs.push( "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Night-Changes-One-Direction(PaglaWorld.com.cm).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/O%20Mahi%20O%20Mahi_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/O%20Sajni%20Re_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Perfect%20Ed%20Sheeran-(PagalSongs.Com.IN).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Samjhawan_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Shawn-Mendes(Pagal-World.Com.In).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/Ve%20Haniya_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/_Govind%20Bolo_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/_Heeriye_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/_Ram%20Siya%20Ram_64(PagalWorld.com.sb).mp3", "https://kanishkagoud.github.io/SPOTIFY_CLONE--using-javascript-FRONTEND_PROJECT/Songs/_Tauba%20Tauba_64(PagalWorld.com.sb).mp3"
-    // )
 
 
 
 //PLAYING THE SONGS 
 let currentAudio = null;
-let currentButton = null; // Track the currently playing button
+let currentButton = null; 
 
 async function playsongs(songs) {
     let allplaybuttons = document.body.querySelectorAll(".playbutton");
@@ -100,68 +93,7 @@ async function playsongs(songs) {
             }
         });
 
-        // element.addEventListener("touchstart", () => {
-
-        //     if (currentAudio && currentButton === element) {
-        //         if (!currentAudio.paused) {
-        //             currentAudio.pause();
-        //             element.querySelector("i").classList.remove("fa-pause");
-        //             element.querySelector("i").classList.add("fa-play");
-
-        //             let mainPlayButton = document.querySelector(".mainplay-button");
-        //             mainPlayButton.classList.remove("fa-circle-pause");
-        //             mainPlayButton.classList.add("fa-circle-play");
-        //         }
-        //         else {
-        //             currentAudio.play();
-        //             element.querySelector("i").classList.remove("fa-play");
-        //             element.querySelector("i").classList.add("fa-pause");
-
-        //             let mainPlayButton = document.querySelector(".mainplay-button");
-        //             mainPlayButton.classList.remove("fa-circle-play");
-        //             mainPlayButton.classList.add("fa-circle-pause");
-        //         }
-
-        //     }
-
-        //     else {
-        //         if (currentAudio && !currentAudio.paused) {
-        //             currentAudio.pause();
-        //             currentAudio.currentTime = 0;
-
-        //             let prevButton = currentButton;
-        //             if (prevButton) {
-        //                 prevButton.querySelector("i").classList.remove("fa-pause");
-        //                 prevButton.querySelector("i").classList.add("fa-play");
-        //             }
-        //         }
-
-        //         currentAudio = new Audio(songs[index]);
-        //         // currentAudio = new Audio(songs[index].href || songs[index]);
-        //         let songName = extractSongName(songs[index]);
-        //         document.querySelector(".nameOf-song").textContent = songName;
-
-        //         currentAudio.addEventListener("loadedmetadata", () => {
-        //             updateTimespan();
-        //             resetProgressBar();
-        //         });
-
-        //         currentAudio.addEventListener("timeupdate", () => {
-        //             updateTimespan();
-        //             updateProgressBar();
-        //         });
-
-        //         currentAudio.play();
-        //         currentButton = element;
-
-        //         element.querySelector("i").classList.remove("fa-play");
-        //         element.querySelector("i").classList.add("fa-pause");
-
-        //         let mainPlayButton = document.querySelector(".mainplay-button");
-        //         mainPlayButton.classList.remove("fa-circle-play");
-        //         mainPlayButton.classList.add("fa-circle-pause");
-        //     }
-        // }, { passive: true });
+       
     }
 
     // Add control for the main play button
@@ -192,30 +124,7 @@ async function playsongs(songs) {
         }
     });
 
-    // mainPlayButton.addEventListener("touchstart", () => {
-    //     if (currentAudio) {
-    //         if (currentAudio.paused) {
-    //             currentAudio.play();
-    //             mainPlayButton.classList.remove("fa-circle-play");
-    //             mainPlayButton.classList.add("fa-circle-pause");
-
-    //             if (currentButton) {
-    //                 currentButton.querySelector("i").classList.remove("fa-play");
-    //                 currentButton.querySelector("i").classList.add("fa-pause");
-    //             }
-    //         }
-    //         else {
-    //             currentAudio.pause();
-    //             mainPlayButton.classList.remove("fa-circle-pause");
-    //             mainPlayButton.classList.add("fa-circle-play");
-
-    //             if (currentButton) {
-    //                 currentButton.querySelector("i").classList.remove("fa-pause");
-    //                 currentButton.querySelector("i").classList.add("fa-play");
-    //             }
-    //         }
-    //     }
-    // }, { passive: true });
+    
 
     document.querySelector(".bar-bottom").addEventListener("click", (e) => {
         let pointer = (e.offsetX / e.target.getBoundingClientRect().width) * 100
@@ -225,12 +134,6 @@ async function playsongs(songs) {
     }
     )
 
-    // document.querySelector(".bar-bottom").addEventListener("touchstart", (e) => {
-    //     let pointer = (e.offsetX / e.target.getBoundingClientRect().width) * 100
-    //     document.querySelector(".circle").style.left = `${pointer}%`;
-    //     document.querySelector(".progress-bar").style.width = `${pointer}%`
-    //     currentAudio.currentTime = ((currentAudio.duration) * pointer) / 100
-    // }, { passive: true });
 }
 
 function updateProgressBar() {
