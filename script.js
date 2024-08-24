@@ -1,7 +1,7 @@
 console.log("java script starts from here!!")
 
-async function getsongs(folder) {
-    let f =await fetch (`/${folder}/`)
+async function getsongs() {
+    let f =await fetch (`/Songs/songs_folder/`)
     let response = await f.text();
     let div = document.createElement("div")
     div.innerHTML = response 
@@ -39,102 +39,202 @@ async function playsongs(songs) {
         let element = allplaybuttons[index];
 
         element.addEventListener("click", () => {
-            handlePlayPause(element, songs[index]);
+
+            if (currentAudio && currentButton === element) {
+                if (!currentAudio.paused) {
+                    currentAudio.pause();
+                    element.querySelector("i").classList.remove("fa-pause");
+                    element.querySelector("i").classList.add("fa-play");
+
+                    let mainPlayButton = document.querySelector(".mainplay-button");
+                    mainPlayButton.classList.remove("fa-circle-pause");
+                    mainPlayButton.classList.add("fa-circle-play");
+                }
+                else {
+                    currentAudio.play();
+                    element.querySelector("i").classList.remove("fa-play");
+                    element.querySelector("i").classList.add("fa-pause");
+
+                    let mainPlayButton = document.querySelector(".mainplay-button");
+                    mainPlayButton.classList.remove("fa-circle-play");
+                    mainPlayButton.classList.add("fa-circle-pause");
+                }
+
+            }
+
+            else {
+                if (currentAudio && !currentAudio.paused) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
+
+                    let prevButton = currentButton;
+                    if (prevButton) {
+                        prevButton.querySelector("i").classList.remove("fa-pause");
+                        prevButton.querySelector("i").classList.add("fa-play");
+                    }
+                }
+
+                currentAudio = new Audio(songs[index]);
+                let songName = extractSongName(songs[index]);
+                document.querySelector(".nameOf-song").textContent = songName;
+
+                currentAudio.addEventListener("loadedmetadata", () => {
+                    updateTimespan();
+                    resetProgressBar();
+                });
+
+                currentAudio.addEventListener("timeupdate", () => {
+                    updateTimespan();
+                    updateProgressBar();
+                });
+
+                currentAudio.play();
+                currentButton = element;
+
+                element.querySelector("i").classList.remove("fa-play");
+                element.querySelector("i").classList.add("fa-pause");
+
+                let mainPlayButton = document.querySelector(".mainplay-button");
+                mainPlayButton.classList.remove("fa-circle-play");
+                mainPlayButton.classList.add("fa-circle-pause");
+            }
         });
 
         element.addEventListener("touchstart", () => {
-            handlePlayPause(element, songs[index]);
+
+            if (currentAudio && currentButton === element) {
+                if (!currentAudio.paused) {
+                    currentAudio.pause();
+                    element.querySelector("i").classList.remove("fa-pause");
+                    element.querySelector("i").classList.add("fa-play");
+
+                    let mainPlayButton = document.querySelector(".mainplay-button");
+                    mainPlayButton.classList.remove("fa-circle-pause");
+                    mainPlayButton.classList.add("fa-circle-play");
+                }
+                else {
+                    currentAudio.play();
+                    element.querySelector("i").classList.remove("fa-play");
+                    element.querySelector("i").classList.add("fa-pause");
+
+                    let mainPlayButton = document.querySelector(".mainplay-button");
+                    mainPlayButton.classList.remove("fa-circle-play");
+                    mainPlayButton.classList.add("fa-circle-pause");
+                }
+
+            }
+
+            else {
+                if (currentAudio && !currentAudio.paused) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
+
+                    let prevButton = currentButton;
+                    if (prevButton) {
+                        prevButton.querySelector("i").classList.remove("fa-pause");
+                        prevButton.querySelector("i").classList.add("fa-play");
+                    }
+                }
+
+                currentAudio = new Audio(songs[index].href || songs[index]);
+                let songName = extractSongName(songs[index]);
+                document.querySelector(".nameOf-song").textContent = songName;
+
+                currentAudio.addEventListener("loadedmetadata", () => {
+                    updateTimespan();
+                    resetProgressBar();
+                });
+
+                currentAudio.addEventListener("timeupdate", () => {
+                    updateTimespan();
+                    updateProgressBar();
+                });
+
+                currentAudio.play();
+                currentButton = element;
+
+                element.querySelector("i").classList.remove("fa-play");
+                element.querySelector("i").classList.add("fa-pause");
+
+                let mainPlayButton = document.querySelector(".mainplay-button");
+                mainPlayButton.classList.remove("fa-circle-play");
+                mainPlayButton.classList.add("fa-circle-pause");
+            }
         }, { passive: true });
     }
 
     // Add control for the main play button
     let mainPlayButton = document.querySelector(".mainplay-button");
     mainPlayButton.addEventListener("click", () => {
-        handlePlayPause(currentButton, currentAudio ? songs[allplaybuttons.indexOf(currentButton)] : null);
+        if (currentAudio) {
+            if (currentAudio.paused) {
+                currentAudio.play();
+                mainPlayButton.classList.remove("fa-circle-play");
+                mainPlayButton.classList.add("fa-circle-pause");
+                
+
+                if (currentButton) {
+                    currentButton.querySelector("i").classList.remove("fa-play");
+                    currentButton.querySelector("i").classList.add("fa-pause");
+                }
+            }
+            else {
+                currentAudio.pause();
+                mainPlayButton.classList.remove("fa-circle-pause");
+                mainPlayButton.classList.add("fa-circle-play");
+
+                if (currentButton) {
+                    currentButton.querySelector("i").classList.remove("fa-pause");
+                    currentButton.querySelector("i").classList.add("fa-play");
+                }
+            }
+        }
     });
 
     mainPlayButton.addEventListener("touchstart", () => {
-        handlePlayPause(currentButton, currentAudio ? songs[allplaybuttons.indexOf(currentButton)] : null);
+        if (currentAudio) {
+            if (currentAudio.paused) {
+                currentAudio.play();
+                mainPlayButton.classList.remove("fa-circle-play");
+                mainPlayButton.classList.add("fa-circle-pause");
+
+                if (currentButton) {
+                    currentButton.querySelector("i").classList.remove("fa-play");
+                    currentButton.querySelector("i").classList.add("fa-pause");
+                }
+            }
+            else {
+                currentAudio.pause();
+                mainPlayButton.classList.remove("fa-circle-pause");
+                mainPlayButton.classList.add("fa-circle-play");
+
+                if (currentButton) {
+                    currentButton.querySelector("i").classList.remove("fa-pause");
+                    currentButton.querySelector("i").classList.add("fa-play");
+                }
+            }
+        }
     }, { passive: true });
 
     document.querySelector(".bar-bottom").addEventListener("click", (e) => {
-        updateProgress(e);
-    });
+        let pointer = (e.offsetX / e.target.getBoundingClientRect().width) * 100
+        document.querySelector(".circle").style.left = `${pointer}%`;
+        document.querySelector(".progress-bar").style.width = `${pointer}%`
+        currentAudio.currentTime = ((currentAudio.duration) * pointer) / 100
+    }
+    )
 
     document.querySelector(".bar-bottom").addEventListener("touchstart", (e) => {
-        updateProgress(e);
+        let pointer = (e.offsetX / e.target.getBoundingClientRect().width) * 100
+        document.querySelector(".circle").style.left = `${pointer}%`;
+        document.querySelector(".progress-bar").style.width = `${pointer}%`
+        currentAudio.currentTime = ((currentAudio.duration) * pointer) / 100
     }, { passive: true });
-}
-
-function handlePlayPause(element, song) {
-    if (currentAudio && currentButton === element) {
-        if (!currentAudio.paused) {
-            currentAudio.pause();
-            updatePlayButton(element, "pause");
-
-            let mainPlayButton = document.querySelector(".mainplay-button");
-            mainPlayButton.classList.remove("fa-circle-pause");
-            mainPlayButton.classList.add("fa-circle-play");
-        } else {
-            currentAudio.play().catch(error => console.error("Playback failed: ", error));
-            updatePlayButton(element, "play");
-
-            let mainPlayButton = document.querySelector(".mainplay-button");
-            mainPlayButton.classList.remove("fa-circle-play");
-            mainPlayButton.classList.add("fa-circle-pause");
-        }
-    } else {
-        if (currentAudio && !currentAudio.paused) {
-            currentAudio.pause();
-            currentAudio.currentTime = 0;
-
-            let prevButton = currentButton;
-            if (prevButton) {
-                updatePlayButton(prevButton, "pause");
-            }
-        }
-
-        currentAudio = new Audio(song);
-        let songName = extractSongName(song);
-        document.querySelector(".nameOf-song").textContent = songName;
-
-        currentAudio.addEventListener("loadedmetadata", () => {
-            updateTimespan();
-            resetProgressBar();
-        });
-
-        currentAudio.addEventListener("timeupdate", () => {
-            updateTimespan();
-            updateProgressBar();
-        });
-
-        currentAudio.play().catch(error => console.error("Playback failed: ", error));
-        currentButton = element;
-
-        updatePlayButton(element, "play");
-
-        let mainPlayButton = document.querySelector(".mainplay-button");
-        mainPlayButton.classList.remove("fa-circle-play");
-        mainPlayButton.classList.add("fa-circle-pause");
-    }
-}
-
-function updatePlayButton(element, action) {
-    if (!element) return;
-    if (action === "play") {
-        element.querySelector("i").classList.remove("fa-play");
-        element.querySelector("i").classList.add("fa-pause");
-    } else {
-        element.querySelector("i").classList.remove("fa-pause");
-        element.querySelector("i").classList.add("fa-play");
-    }
 }
 
 function updateProgressBar() {
     const progressBar = document.querySelector(".progress-bar");
     const circle = document.querySelector(".circle");
-
-    if (!currentAudio) return;
 
     // Calculate the percentage of the song played
     const percentagePlayed = (currentAudio.currentTime / currentAudio.duration) * 100;
@@ -155,12 +255,13 @@ function extractSongName(song) {
     if (typeof song === "string") {
         return song.split("/Songs/songs_folder/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3", "").replaceAll("-(Pagal-World.Com.In)", "").replaceAll("-(PagalSongs.Com.IN)", "").replaceAll(`-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm)`, "").replaceAll(`(PaglaWorld.com.cm)`, "")
     }
+    // else if (typeof song.href === "string") {
+    //     return song.href.split("/Songs/songs_folder/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3", "").replaceAll("(Pagal-World.Com.In)", "").replaceAll("-(PagalSongs.Com.IN)", "").replaceAll(`-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm)`, "").replaceAll(`(PaglaWorld.com.cm)`, "")
+    // }
     return "Unknown Song";
 }
 
 function updateTimespan() {
-    if (!currentAudio) return;
-
     const currentTime = formatTime(currentAudio.currentTime);
     const duration = formatTime(currentAudio.duration);
     document.querySelector(".timespan").textContent = `${currentTime} / ${duration}`;
@@ -172,65 +273,6 @@ function formatTime(seconds) {
     const remainingSeconds = Math.floor(seconds % 60);
     return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
 }
-
-function updateProgress(e) {
-    if (!currentAudio) return;
-
-    let pointer = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
-    document.querySelector(".circle").style.left = `${pointer}%`;
-    document.querySelector(".progress-bar").style.width = `${pointer}%`;
-    currentAudio.currentTime = ((currentAudio.duration) * pointer) / 100;
-}
-
-
-// (Other functions remain unchanged: updateProgressBar, resetProgressBar, extractSongName, updateTimespan, formatTime)
-
-
-
-
-
-
-// function updateProgressBar() {
-//     const progressBar = document.querySelector(".progress-bar");
-//     const circle = document.querySelector(".circle");
-
-//     // Calculate the percentage of the song played
-//     const percentagePlayed = (currentAudio.currentTime / currentAudio.duration) * 100;
-
-//     // Update the circle's position based on the percentage played
-//     circle.style.left = `${percentagePlayed}%`;
-//     progressBar.style.width = `${percentagePlayed}%`;
-// }
-
-// function resetProgressBar() {
-//     const circle = document.querySelector(".circle");
-//     const progressBar = document.querySelector(".progress-bar");
-//     circle.style.left = "0%";  // Reset to start
-//     progressBar.style.width = "0%";
-// }
-
-// function extractSongName(song) {
-//     if (typeof song === "string") {
-//         return song.split("/Songs/songs_folder/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3", "").replaceAll("-(Pagal-World.Com.In)", "").replaceAll("-(PagalSongs.Com.IN)", "").replaceAll(`-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm)`, "").replaceAll(`(PaglaWorld.com.cm)`, "")
-//     }
-//     // else if (typeof song.href === "string") {
-//     //     return song.href.split("/Songs/songs_folder/")[1].replaceAll("%20", " ").replaceAll("(PagalWorld.com.sb)", "").replaceAll("_64", "").replaceAll("_", "").replaceAll(".mp3", "").replaceAll("(Pagal-World.Com.In)", "").replaceAll("-(PagalSongs.Com.IN)", "").replaceAll(`-Ft.-Jitul-Boro-320kbps(PaglaWorld.com.cm)`, "").replaceAll(`(PaglaWorld.com.cm)`, "")
-//     // }
-//     return "Unknown Song";
-// }
-
-// function updateTimespan() {
-//     const currentTime = formatTime(currentAudio.currentTime);
-//     const duration = formatTime(currentAudio.duration);
-//     document.querySelector(".timespan").textContent = `${currentTime} / ${duration}`;
-// }
-
-// function formatTime(seconds) {
-//     if (isNaN(seconds)) return "0:00";
-//     const minutes = Math.floor(seconds / 60);
-//     const remainingSeconds = Math.floor(seconds % 60);
-//     return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
-// }
 
 
 
@@ -794,7 +836,7 @@ show_albums.addEventListener("click", (element) => {
 
 
 async function main() {
-    let songs = await getsongs("Songs/songs_folder");
+    let songs = await getsongs();
     console.log(songs)
     await playsongs(songs)
     let songs_name = []
